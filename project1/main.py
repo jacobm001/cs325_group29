@@ -60,6 +60,7 @@ def random_tests():
 def print_fail(alg, a):
 	print "Algorithm {0} failed with test {1}".format(alg, a)
 
+# Test each of the algorithms against known arrays and their answers
 def validate_algorithms():
 	a = {}
 	a["a1"] = [1, 4, -9, 8, 1, 3, 3, 1, -1, -4, -6, 2, 8, 19, -10, -11]
@@ -90,7 +91,7 @@ def validate_algorithms():
 		if sum(algorithm3(a["a{0}".format(i)])) != a["a{0}_ans".format(i)]:
 			print_fail(3, i)
 		if sum(algorithm4(a["a{0}".format(i)])) != a["a{0}_ans".format(i)]:
-			print_fail(1, i)
+			print_fail(4, i)
 
 def MSS_test():
 	print "MSS_Test stuff goes here"
@@ -98,11 +99,11 @@ def MSS_test():
 def print_help():
 	print "Program argument error!"
 	print "  Valid arguments include time_test, alg_test, or MSS_test"
-	return None
 
 if __name__ == "__main__":
 	if len(sys.argv) < 2 :
 		print_help()
+		sys.exit()
 
 	if sys.argv[1] == "time_test":
 		random_tests()
