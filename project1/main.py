@@ -23,7 +23,7 @@ def run_test(Alg):
 	with open(f_name, 'wb') as csvfile:
 		writer = csv.writer(csvfile)
 
-		for n in range(0, 1000000, 15):
+		for n in range(0, 1000000, 5):
 			# build a random array of len n
 			A = []
 			for _ in range(n):
