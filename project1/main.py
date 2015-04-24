@@ -97,6 +97,7 @@ def validate_algorithms():
 	a["a8_sub"] = []
 	a["a8_ans"] = 0
 
+	all_passed = True
 	for i in range(1,9):
 		a1 = algorithm1(a["a{0}".format(i)])
 		a2 = algorithm2(a["a{0}".format(i)])
@@ -105,12 +106,22 @@ def validate_algorithms():
 
 		if  a1 != a["a{0}_ans".format(i)]:
 			print_fail(1, i, a["a{0}_ans".format(i)], a1)
+			all_passed = False
+
 		if  a2 != a["a{0}_ans".format(i)]:
 			print_fail(2, i, a["a{0}_ans".format(i)], a2)
+			all_passed = False
+
 		if  a3 != a["a{0}_ans".format(i)]:
-			print_fail(1, i, a["a{0}_ans".format(i)], a3)
+			print_fail(3, i, a["a{0}_ans".format(i)], a3)
+			all_passed = False
+
 		if  a4 != a["a{0}_ans".format(i)]:
-			print_fail(1, i, a["a{0}_ans".format(i)], a4)
+			print_fail(4, i, a["a{0}_ans".format(i)], a4)
+			all_passed = False
+
+	if all_passed == True:
+		print 'All tests passed! :)'
 
 def MSS_test():
 	print "MSS_Test stuff goes here"
