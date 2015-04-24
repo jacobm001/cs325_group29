@@ -57,8 +57,10 @@ def random_tests():
 	for p in jobs:
 		p.join()
 
-def print_fail(alg, a):
-	print "Algorithm {0} failed with test {1}".format(alg, a)
+def print_fail(alg, a, expected, returned):
+	print "Algorithm {0} failed test {1}".format(alg, a)
+	print "  Expected: {0}".format(expected)
+	print "  Returned: {0}".format(returned)
 
 # Test each of the algorithms against known arrays and their answers
 def validate_algorithms():
@@ -72,7 +74,7 @@ def validate_algorithms():
 	a["a2_ans"] = 30
 
 	a["a3"] = [10, -11, -1, -9, 33, -45, 23, 24, -1, -7 -8, 19]
-	a["a3_sub"] = [23,24, -1, -7, -8, 19]
+	a["a3_sub"] = [23, 24, -1, -7, -8, 19]
 	a["a3_ans"] = 50
 
 	a["a4"] = [31,-41, 59, 26, -53, 58, 97, -93, -23, 84]
@@ -83,15 +85,32 @@ def validate_algorithms():
 	a["a5_sub"] = [3, 2, 1, 1]
 	a["a5_ans"] = 7
 
-	for i in range(1,6):
-		if sum(algorithm1(a["a{0}".format(i)])) != a["a{0}_ans".format(i)]:
-			print_fail(1, i)
-		if sum(algorithm2(a["a{0}".format(i)])) != a["a{0}_ans".format(i)]:
-			print_fail(2, i)
-		if sum(algorithm3(a["a{0}".format(i)])) != a["a{0}_ans".format(i)]:
-			print_fail(3, i)
-		if sum(algorithm4(a["a{0}".format(i)])) != a["a{0}_ans".format(i)]:
-			print_fail(4, i)
+	a["a6"] = [12, 99, 99, -99, -27, 0, 0, 0, -3,10]
+	a["a6_sub"] = [12, 99, 99]
+	a["a6_ans"] = 210
+
+	a["a7"] = [-2, 1, -3, 4, -1, 2, 1, -5, 4]
+	a["a7_sub"] = [4, -1, 2, 1]
+	a["a7_ans"] = 6
+
+	a["a8"] = [-1, -3 -5]
+	a["a8_sub"] = []
+	a["a8_ans"] = 0
+
+	for i in range(1,9):
+		a1 = algorithm1(a["a{0}".format(i)])
+		a2 = algorithm2(a["a{0}".format(i)])
+		a3 = algorithm3(a["a{0}".format(i)])
+		a4 = algorithm4(a["a{0}".format(i)])
+
+		if  a1 != a["a{0}_ans".format(i)]:
+			print_fail(1, i, a["a{0}_ans".format(i)], a1)
+		if  a2 != a["a{0}_ans".format(i)]:
+			print_fail(2, i, a["a{0}_ans".format(i)], a2)
+		if  a3 != a["a{0}_ans".format(i)]:
+			print_fail(1, i, a["a{0}_ans".format(i)], a3)
+		if  a4 != a["a{0}_ans".format(i)]:
+			print_fail(1, i, a["a{0}_ans".format(i)], a4)
 
 def MSS_test():
 	print "MSS_Test stuff goes here"
