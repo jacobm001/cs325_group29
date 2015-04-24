@@ -3,8 +3,8 @@ def algorithm1(A):
 	for i in range(0, len(A)):
 		for j in range(i, len(A)):
 			partial = 0
-			for j in range(i, j):
-				partial += A[j]
+			for k in range(i, j+1):
+				partial += A[k]
 
 			if partial > max:
 				max = partial
