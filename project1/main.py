@@ -23,7 +23,7 @@ def run_test(Alg):
 	with open(f_name, 'wb') as csvfile:
 		writer = csv.writer(csvfile)
 
-		for n in range(0, 1000000, 20):
+		for n in range(100, 1000001, 100):
 			# build a random array of len n
 			A = []
 			for _ in range(n):
@@ -46,6 +46,8 @@ def run_test(Alg):
 			# if we have, break the loop
 			if t >= max_time:
 				break;
+
+		print 'Algorithm {0} finished'.format(Alg)
 
 def random_tests():
 	jobs = []
