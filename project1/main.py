@@ -14,7 +14,7 @@ from algorithm3 import *
 from algorithm4 import *
 
 # Global Variables
-max_time = 2*60 # 2 minutes
+max_time = 60 # 1 minutes
 min_num = -99
 max_num = 99
 
