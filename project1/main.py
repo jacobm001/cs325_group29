@@ -125,8 +125,27 @@ def validate_algorithms():
 	if all_passed == True:
 		print 'All tests passed! :)'
 
+def read_input():
+	A = []
+	with open('MSS_Problems.txt', 'r') as f:
+		for line in f:
+			arr = line.replace('[','').replace(']','').replace(' ', '')
+			arr = arr.split(',')
+			arr = [int(a) for a in arr]
+			A.append(arr)
+
+	return A
+
 def MSS_test():
-	print "MSS_Test stuff goes here"
+	A = read_input()
+
+	with open('MSS_Results.txt', 'w') as f:
+		for cnt, arr in enumerate(A):
+			f.write('Array {0}:\n'.format(cnt))
+			f.write('    Algorithm 1: {0}\n'.format(algorithm1(arr)))
+			f.write('    Algorithm 2: {0}\n'.format(algorithm2(arr)))
+			f.write('    Algorithm 3: {0}\n'.format(algorithm3(arr)))
+			f.write('    Algorithm 4: {0}\n'.format(algorithm4(arr)))
 
 def print_help():
 	print "Program argument error!"
