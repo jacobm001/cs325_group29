@@ -14,7 +14,7 @@ from algorithm3 import *
 from algorithm4 import *
 
 # Global Variables
-max_time = 60 # 1 minutes
+max_time = 2*60 # 2 minutes
 min_num = -99
 max_num = 99
 
@@ -23,7 +23,7 @@ def run_test(Alg):
 	with open(f_name, 'wb') as csvfile:
 		writer = csv.writer(csvfile)
 
-		for n in range(100, 1000001, 100):
+		for n in range(100, 100001, 100):
 			# build a random array of len n
 			A = []
 			for _ in range(n):
