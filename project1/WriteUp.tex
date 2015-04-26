@@ -10,7 +10,7 @@
 
 \title{CS 325: Project 1}
 \author{Group 29: Jacob Mastel, Yash Naik, Cera Olson}
-\date{}							% Activate to display a given date or no date
+\date{26 April 2015}							% Activate to display a given date or no date
 
 \begin{document}
 \maketitle
@@ -25,7 +25,7 @@ Enumeration has a running time of $O(n^{3})$. Because of the 3 loops, each run n
 for i = 1 to n
 	for j = i to n
 		for k = i to j
-			sum += $a_k$
+			sum += a_k
 		if  sum > ans then ans = sum
 return ans
 \end{verbatim}
@@ -59,7 +59,7 @@ return ans
 
 \subsubsection{For each algorithm, what is the size of the biggest instance that you can solve with your algorithm in one hour?}
 
-The running time for n = 1500 is 136 seconds. 
+
 
 \section{Algorithm 2: Better Enumeration}
 \subsection{Theoretical Run-Time Analysis}
@@ -70,7 +70,7 @@ Because of the reduced number of loops, 2 loops running n times, the running tim
 \begin{verbatim}
 for i = 1 to n
 	for j = i to n
-		sum += $a_j$
+		sum += a_j
 	if  sum > ans then ans = sum
 return ans
 \end{verbatim}
@@ -142,6 +142,13 @@ MaxSubarray(A, n) will return the sum of the maximum subarray of an array A of s
 
 \section{Algorithm 4: Linear-Time}
 \subsection{Theoretical Run-Time Analysis}
+
+Because there is only 1 loop that runs through n times the Linear Time Algorithm runs the fastest with a $O(n)$ running time. 
+
+\subsubsection{Pseudocode}
+\begin{verbatim}for j = 1 .. n	b = max{b + j, j}    	ans = max{b, ans}
+return ans
+\end{verbatim}
 
 \subsection{Experimental Analysis}
 \begin{figure}
