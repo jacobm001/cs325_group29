@@ -6,6 +6,7 @@
 \usepackage{graphicx}				% Use pdf, png, jpg, or eps§ with pdflatex; use eps in DVI mode
 								% TeX will automatically convert eps --> pdf in pdflatex		
 \usepackage{amssymb}
+\usepackage{listings}
 
 \title{CS 325: Project 1}
 \author{Group 29: Jacob Mastel, Yash Naik, Cera Olson}
@@ -16,22 +17,31 @@
 \section{Algorithm 1: Enumeration}
 \subsection{Theoretical Run-Time Analysis}
 
+Enumeration has a running time of $O(n^{3})$. Because of the 3 loops, each run n times gives the algorithm a running time of ${n*n*n}$.
+
 \subsection{Experimental Analysis}
+\includegraphics{AvgRunTime.png} \\
+\includegraphics{Alg1Log.png}
+
 
 \subsection{Extrapolation and Interpretation}
-\includegraphics{AvgRunTime.png}
-\includegraphics{Alg1Log.png}
+
 \subsubsection{For each algorithm use the experimental data to estimate a function that models the relationship between running times and input sizes (n). Discuss any discrepancies between the experimental and theoretical running times.}
-\subsubsection{For each algorithm, what is the size of the biggest instance that you can solve with your algorithm in one hour?}
+
+\subsubsection{For each algorithm, what is the size of the biggest instance that you can solve with your algorithm in one hour?}
 
 \section{Algorithm 2: Better Enumeration}
 \subsection{Theoretical Run-Time Analysis}
 
 \subsection{Experimental Analysis}
+\includegraphics{AvgRunTime.png} \\
+\includegraphics{Alg2Log.png}
+
 
 \subsection{Extrapolation and Interpretation}
 \subsubsection{For each algorithm use the experimental data to estimate a function that models the relationship between running times and input sizes (n). Discuss any discrepancies between the experimental and theoretical running times.}
-\subsubsection{For each algorithm, what is the size of the biggest instance that you can solve with your algorithm in one hour?}
+
+\subsubsection{For each algorithm, what is the size of the biggest instance that you can solve with your algorithm in one hour?}
 
 \section{Algorithm 3: Divide and Conquer}
 
@@ -40,19 +50,27 @@
 \subsection{Proof of Correctness}
 
 \subsection{Experimental Analysis}
+\includegraphics{AvgRunTime.png} \\
+\includegraphics{Alg3Log.png}
+
 
 \subsection{Extrapolation and Interpretation}
 \subsubsection{For each algorithm use the experimental data to estimate a function that models the relationship between running times and input sizes (n). Discuss any discrepancies between the experimental and theoretical running times.}
-\subsubsection{For each algorithm, what is the size of the biggest instance that you can solve with your algorithm in one hour?}
+
+\subsubsection{For each algorithm, what is the size of the biggest instance that you can solve with your algorithm in one hour?}
 
 \section{Algorithm 4: Linear-Time}
 \subsection{Theoretical Run-Time Analysis}
 
 \subsection{Experimental Analysis}
+\includegraphics{AvgRunTime.png} \\
+\includegraphics{Alg4Log.png}
+
 
 \subsection{Extrapolation and Interpretation}
 \subsubsection{For each algorithm use the experimental data to estimate a function that models the relationship between running times and input sizes (n). Discuss any discrepancies between the experimental and theoretical running times.}
-\subsubsection{For each algorithm, what is the size of the biggest instance that you can solve with your algorithm in one hour?}
+
+\subsubsection{For each algorithm, what is the size of the biggest instance that you can solve with your algorithm in one hour?}
 
 \newpage{}
 \section{Appendices}
