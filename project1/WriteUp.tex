@@ -14,6 +14,7 @@
 
 \begin{document}
 \maketitle
+\newpage{}
 \section{Algorithm 1: Enumeration}
 \subsection{Theoretical Run-Time Analysis}
 
@@ -28,12 +29,9 @@ for i = 1 to n
 		if  sum > ans then ans = sum
 return ans
 \end{verbatim}
-\break
-\break	
+	
 \subsection{Experimental Analysis}
-\break
-\break
-\break
+
 \begin{figure}
 \includegraphics{AvgRunTime.png} 
 \caption{Average Run Time for All 4 Algorithms}
@@ -61,16 +59,19 @@ return ans
 
 \subsubsection{For each algorithm, what is the size of the biggest instance that you can solve with your algorithm in one hour?}
 
+The running time for n = 1500 is 136 seconds. 
+
 \section{Algorithm 2: Better Enumeration}
 \subsection{Theoretical Run-Time Analysis}
+
+Because of the reduced number of loops, 2 loops running n times, the running time id $O(n^2)$. This algorithm runs very similarly to the first Algorithm, but it instead skips recalculating the sum each time through. This saves time and makes for a more efficient running time. 
 
 \subsubsection{Pseudocode}
 \begin{verbatim}
 for i = 1 to n
 	for j = i to n
-		for k = i to j
-			sum += $a_k$
-		if  sum > ans then ans = sum
+		sum += $a_j$
+	if  sum > ans then ans = sum
 return ans
 \end{verbatim}
 
@@ -85,6 +86,15 @@ return ans
 \caption{Algorithm 2 Run Time}
 \end{figure}
 
+\begin{center}
+\begin{tabular}{ |c|c| } 
+ \hline
+ n & Time \\ 
+100	& 0.000691457\\200	& 0.002523139\\300	& 0.005414918\\400	& 0.009347594\\500	& 0.017913874\\600	& 0.032127009\\700	& 0.03163984\\800	& 0.037066278\\900	& 0.076525134\\1000 & 0.058382396\\2000	 & 0.277541148\\3000	 & 0.756019462\\4000	 & 1.17740895\\5000	 & 1.81821447\\6000	 & 2.809200957\\7000	 & 3.774356505\\8000	 & 4.120086395\\9000	 & 5.538109223\\10000 & 6.983674863\\20000 & 28.4940567\\
+30000 & 67.27082063\\
+ \hline
+\end{tabular}
+\end{center}
 
 \subsection{Extrapolation and Interpretation}
 \subsubsection{For each algorithm use the experimental data to estimate a function that models the relationship between running times and input sizes (n). Discuss any discrepancies between the experimental and theoretical running times.}
@@ -95,7 +105,14 @@ return ans
 
 \subsection{Theoretical Run-Time Analysis}
 
+The original problem size is a power of 2, so all sub sizes are integers. So the run time method of the program will be $O(n lg n)$. $T(n)=2T(n/2)+O(n)$ 
+
+\subsubsection{Psuedocode}
+The Max-SubArray is the initial call function, the base case is low=high. If a cross occurs then cross-SubArray is called. Cross-SubArray(low, mid, high, A)//Sub-Array for A[iÉ.mid]left-sum = [Infinity]for i = mid to lowsum= sum + A[i]	if sum>left-sum		left-sum=sum		max-left=i//Sub-Array for A[mid+1É.high]right-sum = [Infinity]for j = mid+1 to high	sum= sum + A[j]	if sum>right-sum		right-sum=sum		max-right=jreturn(max-left, max-right, left-sum+right-sum)//Initial call Max-SubArrayMax-SubArray(low, high, A)For i to array-sizeIf high==low	Return (A[low])	Else mid= [low + high)/2]		(Low-low, Low-high, Low-sum)= Max-SubArray (A, low, mid)		(Right-low, Right-high, Right-sum)= Max-SubArray (A, mid+1, high)		(Cross-low, Cross-high, Cross-sum)= Cross-SubArray(low, mid, high, A)		If left-sum>= right-sum and left-sum>= cross-sum			Return(left-low, left-high, left-sum)		ElseIf  right-sum>= left-sum and right-sum>= cross-sum			Return (right-low, right-high, right-sum)		ElseReturn (cross-low, cross-high, cross-sum)
+
 \subsection{Proof of Correctness}
+
+MaxSubarray(A, n) will return the sum of the maximum subarray of an array A of size n.Proof: Base Case:- If n = 0. Then max = current = 0. Then subarray wonÕt be possible and the max will be zero for array of zero elements.Case n=1: If n=1 meaning that there is one single element then if the value is positive it will be considered as array and max value will be assigned with the value of the array element.Inductive hypothesis:-  Considering array contain more elements say ÔnÕ.The method will find the sum of the whole array and save it in a variable max. and then it will divide the array in such a way that all the possible combinations of the array will be find and computed such that every loop execution the sum is compared with the max value if sum is greater then the value will be stored.So while n>1 (meaning that more than one element in the array) the array will recursively divided and computes sum for all possible subarrays and compares with the max which will ultimately considered as the maximum value of a subarray.
 
 \subsection{Experimental Analysis}
 
@@ -109,6 +126,14 @@ return ans
 \caption{Algorithm 3 Run Time}
 \end{figure}
 
+\begin{center}
+\begin{tabular}{ |c|c| } 
+ \hline
+ n & Time \\ 
+100	& 0.000513281\\1000	 & 0.004811525\\2000 & 0.010599179\\3000	 & 0.015096591\\4000	 & 0.020326933\\5000	 & 0.041936171\\6000	 & 0.039872297\\7000	 & 0.047068976\\8000	 & 0.042948396\\9000	 & 0.050002995\\10000 & 0.054033207\\20000 & 0.127373954\\30000 & 0.194761927\\40000 & 0.254894853\\50000 & 0.31652922\\60000 & 0.411895206\\70000 & 0.450825678\\80000 & 0.538815784\\90000 & 0.589621596\\100000 & 0.64801116\\
+ \hline
+\end{tabular}
+\end{center}
 
 \subsection{Extrapolation and Interpretation}
 \subsubsection{For each algorithm use the experimental data to estimate a function that models the relationship between running times and input sizes (n). Discuss any discrepancies between the experimental and theoretical running times.}
@@ -129,6 +154,14 @@ return ans
 \caption{Algorithm 4 Run Time}
 \end{figure}
 
+\begin{center}
+\begin{tabular}{ |c|c| } 
+ \hline
+ n & Time \\ 
+100 & 0.00014592\\1000	 & 0.000610561\\2000	 & 0.001227777\\3000	 & 0.00182733\\4000	 & 0.002412802\\5000	 & 0.002993667\\6000	 & 0.003615748\\7000	 & 0.004194308\\8000	 & 0.004854277\\9000	 & 0.005397254\\10000 & 0.005966598\\20000 & 0.011977484\\30000 & 0.018128915\\40000 & 0.034239523\\50000 & 0.043462445\\60000 & 0.037134118\\70000 & 0.041755435\\80000 & 0.061413183\\90000 & 0.053687095\\100000 & 0.061596479\\
+ \hline
+\end{tabular}
+\end{center}
 
 \subsection{Extrapolation and Interpretation}
 \subsubsection{For each algorithm use the experimental data to estimate a function that models the relationship between running times and input sizes (n). Discuss any discrepancies between the experimental and theoretical running times.}

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012) (format=pdflatex 2012.6.30)  26 APR 2015 17:15
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012) (format=pdflatex 2012.6.30)  26 APR 2015 17:50
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -319,63 +319,67 @@ e
 ))
 \c@lstlisting=\count117
 
+[1{/usr/local/texlive/2012/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
+<AvgRunTime.png, id=9, 372.64218pt x 223.58531pt>
+File: AvgRunTime.png Graphic file (type png)
+ <use AvgRunTime.png>
+Package pdftex.def Info: AvgRunTime.png used on input line 36.
+(pdftex.def)             Requested size: 372.64127pt x 223.58475pt.
+
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [1{/usr/local/texlive/2012/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-<AvgRunTime.png, id=15, 372.64218pt x 223.58531pt>
-File: AvgRunTime.png Graphic file (type png)
- <use AvgRunTime.png>
-Package pdftex.def Info: AvgRunTime.png used on input line 38.
-(pdftex.def)             Requested size: 372.64127pt x 223.58475pt.
-
-<Alg1Log.png, id=16, 372.64218pt x 223.58531pt>
+ [2 <./AvgRunTime.png>] <Alg1Log.png, id=19, 372.64218pt x 223.58531pt>
 File: Alg1Log.png Graphic file (type png)
  <use Alg1Log.png>
-Package pdftex.def Info: Alg1Log.png used on input line 43.
+Package pdftex.def Info: Alg1Log.png used on input line 41.
 (pdftex.def)             Requested size: 372.64127pt x 223.58475pt.
- [2 <./AvgRunTime.png> <./Alg1Log.png>]
+
+[3 <./Alg1Log.png>]
 File: AvgRunTime.png Graphic file (type png)
  <use AvgRunTime.png>
-Package pdftex.def Info: AvgRunTime.png used on input line 86.
+Package pdftex.def Info: AvgRunTime.png used on input line 99.
 (pdftex.def)             Requested size: 372.64127pt x 223.58475pt.
-
-Underfull \vbox (badness 2237) has occurred while \output is active []
-
- [3]
-<Alg2Log.png, id=23, 372.64218pt x 223.58531pt>
+ [4]
+<Alg2Log.png, id=26, 372.64218pt x 223.58531pt>
 File: Alg2Log.png Graphic file (type png)
  <use Alg2Log.png>
-Package pdftex.def Info: Alg2Log.png used on input line 91.
+Package pdftex.def Info: Alg2Log.png used on input line 104.
 (pdftex.def)             Requested size: 372.64127pt x 223.58475pt.
- [4 <./Alg2Log.png>]
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [5 <./Alg2Log.png>]
+Missing character: There is no É in font cmr10!
+Missing character: There is no É in font cmr10!
+ [6]
+Missing character: There is no Õ in font cmr10!
+Missing character: There is no Ô in font cmr10!
+Missing character: There is no Õ in font cmr10!
 File: AvgRunTime.png Graphic file (type png)
  <use AvgRunTime.png>
-Package pdftex.def Info: AvgRunTime.png used on input line 109.
+Package pdftex.def Info: AvgRunTime.png used on input line 201.
 (pdftex.def)             Requested size: 372.64127pt x 223.58475pt.
-
-Underfull \vbox (badness 1303) has occurred while \output is active []
-
- [5]
-<Alg3Log.png, id=30, 372.64218pt x 223.58531pt>
+ [7]
+<Alg3Log.png, id=37, 372.64218pt x 223.58531pt>
 File: Alg3Log.png Graphic file (type png)
  <use Alg3Log.png>
-Package pdftex.def Info: Alg3Log.png used on input line 114.
+Package pdftex.def Info: Alg3Log.png used on input line 206.
 (pdftex.def)             Requested size: 372.64127pt x 223.58475pt.
+ [8 <./Alg3Log.png>]
 File: AvgRunTime.png Graphic file (type png)
-
-<use AvgRunTime.png>
-Package pdftex.def Info: AvgRunTime.png used on input line 129.
+ <use AvgRunTime.png>
+Package pdftex.def Info: AvgRunTime.png used on input line 248.
 (pdftex.def)             Requested size: 372.64127pt x 223.58475pt.
 
-Underfull \vbox (badness 1242) has occurred while \output is active []
+Underfull \vbox (badness 3148) has occurred while \output is active []
 
- [6 <./Alg3Log.png>] <Alg4Log.png, id=34, 372.64218pt x 223.58531pt>
+ [9]
+<Alg4Log.png, id=44, 372.64218pt x 223.58531pt>
 File: Alg4Log.png Graphic file (type png)
  <use Alg4Log.png>
-Package pdftex.def Info: Alg4Log.png used on input line 134.
+Package pdftex.def Info: Alg4Log.png used on input line 253.
 (pdftex.def)             Requested size: 372.64127pt x 223.58475pt.
-
-[7 <./Alg4Log.png>] [8]
+ [10 <./Alg4Log.png>] [11]
 (/usr/local/texlive/2012/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2004/09/05 1.3 listings language file
 )
@@ -386,7 +390,7 @@ File: omlcmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OML/cmr/m/n' in size <10.95> not available
 (Font)              Font shape `OML/cmm/m/it' tried instead on input line 9.
-) (./algorithm2.py) (./algorithm3.py [9]) (./algorithm4.py) (./main.py
+) (./algorithm2.py) (./algorithm3.py [12]) (./algorithm4.py) (./main.py
 LaTeX Font Info:    Try loading font information for OMS+cmr on input line 11.
 
 (/usr/local/texlive/2012/texmf-dist/tex/latex/base/omscmr.fd
@@ -394,7 +398,7 @@ File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 11.
- [10]
+ [13]
 Overfull \hbox (56.18044pt too wide) in paragraph at lines 30--32
 [][][][][][][][][][][][][][][][] 
  []
@@ -422,7 +426,7 @@ Overfull \hbox (102.17091pt too wide) in paragraph at lines 41--43
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [11]
+ [14]
 Overfull \hbox (16.76003pt too wide) in paragraph at lines 67--68
 [][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
@@ -447,7 +451,7 @@ Overfull \hbox (10.18996pt too wide) in paragraph at lines 78--79
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [12]
+ [15]
 Overfull \hbox (23.3301pt too wide) in paragraph at lines 110--111
 [][][][][][][][][][][][][][][][][][][][][][][][] 
  []
@@ -475,7 +479,7 @@ Overfull \hbox (115.31105pt too wide) in paragraph at lines 132--133
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [13]
+ [16]
 Overfull \hbox (102.17091pt too wide) in paragraph at lines 145--146
 [][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
@@ -500,11 +504,11 @@ Overfull \hbox (56.18044pt too wide) in paragraph at lines 152--154
 [][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
-) [14] (./WriteUp.aux) ) 
+) [17] (./WriteUp.aux) ) 
 Here is how much of TeX's memory you used:
  4743 strings out of 493488
  63938 string characters out of 3141326
- 176870 words of memory out of 3000000
+ 176859 words of memory out of 3000000
  7808 multiletter control sequences out of 15000+200000
  11601 words of font info for 45 fonts, out of 3000000 for 9000
  1118 hyphenation exceptions out of 8191
@@ -519,10 +523,10 @@ s/cm/cmr9.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/c
 m/cmsy10.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm
 /cmti10.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/
 cmtt10.pfb>
-Output written on WriteUp.pdf (14 pages, 155998 bytes).
+Output written on WriteUp.pdf (17 pages, 164007 bytes).
 PDF statistics:
- 91 PDF objects out of 1000 (max. 8388607)
- 60 compressed objects within 1 object stream
+ 100 PDF objects out of 1000 (max. 8388607)
+ 66 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  26 words of extra memory for PDF output out of 10000 (max. 10000000)
 
