@@ -15,6 +15,11 @@
 \begin{document}
 \maketitle
 \newpage{}
+\begin{figure}
+\includegraphics{AvgRunTime.png} [H]
+\caption{Average Run Time for All 4 Algorithms}
+\end{figure}
+
 \section{Algorithm 1: Enumeration}
 \subsection{Theoretical Run-Time Analysis}
 
@@ -33,12 +38,7 @@ return ans
 \subsection{Experimental Analysis}
 
 \begin{figure}
-\includegraphics{AvgRunTime.png} 
-\caption{Average Run Time for All 4 Algorithms}
-\end{figure}
-\break
-\begin{figure}
-\includegraphics{Alg1Log.png}
+\includegraphics{Alg1Log.png} [H]
 \caption{Algorithm 1 Run Time}
 \end{figure}
 
@@ -59,6 +59,7 @@ return ans
 
 \subsubsection{For each algorithm, what is the size of the biggest instance that you can solve with your algorithm in one hour?}
 
+When n doubles, the running time increases eightfold for an $O(n^3)$ algorithm. In one hour this algorithm can run approximately 4,000 values. $(1,000 *2^2)$.
 
 
 \section{Algorithm 2: Better Enumeration}
@@ -76,13 +77,10 @@ return ans
 \end{verbatim}
 
 \subsection{Experimental Analysis}
-\begin{figure}
-\includegraphics{AvgRunTime.png} 
-\caption{Average Run Time for All 4 Algorithms}
-\end{figure}
+
 \break
 \begin{figure}
-\includegraphics{Alg2Log.png}
+\includegraphics{Alg2Log.png}[H]
 \caption{Algorithm 2 Run Time}
 \end{figure}
 
@@ -101,6 +99,8 @@ return ans
 
 \subsubsection{For each algorithm, what is the size of the biggest instance that you can solve with your algorithm in one hour?}
 
+When n doubles, the running time increases fourfold for an $O(n^2)$ algorithm. In one hour this algorithm can run approximately 320,000 values. $(10,000 *2^5)$.
+
 \section{Algorithm 3: Divide and Conquer}
 
 \subsection{Theoretical Run-Time Analysis}
@@ -117,12 +117,7 @@ MaxSubarray(A, n) will return the sum of the maximum subarray of an array A of s
 \subsection{Experimental Analysis}
 
 \begin{figure}
-\includegraphics{AvgRunTime.png} 
-\caption{Average Run Time for All 4 Algorithms}
-\end{figure}
-\break
-\begin{figure}
-\includegraphics{Alg3Log.png}
+\includegraphics{Alg3Log.png}[H]
 \caption{Algorithm 3 Run Time}
 \end{figure}
 
@@ -140,6 +135,8 @@ MaxSubarray(A, n) will return the sum of the maximum subarray of an array A of s
 
 \subsubsection{For each algorithm, what is the size of the biggest instance that you can solve with your algorithm in one hour?}
 
+When n doubles, the running time slightly more than doubles for an $O(n log n)$ algorithm. In one hour this algorithm can run approximately 409,600,000 values. $(100,000 *2^12)$.
+
 \section{Algorithm 4: Linear-Time}
 \subsection{Theoretical Run-Time Analysis}
 
@@ -151,13 +148,9 @@ return ans
 \end{verbatim}
 
 \subsection{Experimental Analysis}
+
 \begin{figure}
-\includegraphics{AvgRunTime.png} 
-\caption{Average Run Time for All 4 Algorithms}
-\end{figure}
-\break
-\begin{figure}
-\includegraphics{Alg4Log.png}
+\includegraphics{Alg4Log.png}[H]
 \caption{Algorithm 4 Run Time}
 \end{figure}
 
@@ -174,6 +167,8 @@ return ans
 \subsubsection{For each algorithm use the experimental data to estimate a function that models the relationship between running times and input sizes (n). Discuss any discrepancies between the experimental and theoretical running times.}
 
 \subsubsection{For each algorithm, what is the size of the biggest instance that you can solve with your algorithm in one hour?}
+
+When n doubles, the running time doubles for an $O(n)$ algorithm. In one hour this algorithm can run approximately 3,276,800,000 values. $(100,000 *2^15)$.
 
 \newpage{}
 \section{Appendices}
