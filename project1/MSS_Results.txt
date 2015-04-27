@@ -1,0 +1,35 @@
+Array 0:
+    Algorithm 1: 296
+    Algorithm 2: 296
+    Algorithm 3: 296
+    Algorithm 4: 296
+Array 1:
+    Algorithm 1: 199
+    Algorithm 2: 199
+    Algorithm 3: 199
+    Algorithm 4: 199
+Array 2:
+    Algorithm 1: 992
+    Algorithm 2: 992
+    Algorithm 3: 992
+    Algorithm 4: 992
+Array 3:
+    Algorithm 1: 92
+    Algorithm 2: 92
+    Algorithm 3: 92
+    Algorithm 4: 92
+Array 4:
+    Algorithm 1: 2
+    Algorithm 2: 2
+    Algorithm 3: 2
+    Algorithm 4: 2
+Array 5:
+    Algorithm 1: 410
+    Algorithm 2: 410
+    Algorithm 3: 410
+    Algorithm 4: 410
+Array 6:
+    Algorithm 1: 258
+    Algorithm 2: 258
+    Algorithm 3: 258
+    Algorithm 4: 258
