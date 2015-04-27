@@ -54,10 +54,11 @@ return ans
 \subsection{Extrapolation and Interpretation}
 
 \subsubsection{For each algorithm use the experimental data to estimate a function that models the relationship between running times and input sizes (n). Discuss any discrepancies between the experimental and theoretical running times.}
+\break
+In an $O(n^3)$ algorithm, as n doubles the running times increases 8 fold. This means the running time increases significantly faster than the other versions of this algorithm. Right around n=9000, the algorithm begins to increase even faster than it was already. Of the 4 algorithms, it has the worst efficiency, and the experimental data supports that.  
 
-
-
-\subsubsection{For each algorithm, what is the size of the biggest instance that you can solve with your algorithm in one hour?}
+\subsubsection{For each algorithm, what is the size of the biggest instance that you can solve with your algorithm in one hour?} 
+\break
 
 When n doubles, the running time increases eightfold for an $O(n^3)$ algorithm. In one hour this algorithm can run approximately 4,000 values. $(1,000 *2^2)$.
 
@@ -96,9 +97,11 @@ return ans
 
 \subsection{Extrapolation and Interpretation}
 \subsubsection{For each algorithm use the experimental data to estimate a function that models the relationship between running times and input sizes (n). Discuss any discrepancies between the experimental and theoretical running times.}
+\break
+Using what we know about the algorithm and the experimental data, the data above supports the running time of $O(n^2)$. If you walk through the data, the running times increase by approximately a factor of 4. 
 
 \subsubsection{For each algorithm, what is the size of the biggest instance that you can solve with your algorithm in one hour?}
-
+\break
 When n doubles, the running time increases fourfold for an $O(n^2)$ algorithm. In one hour this algorithm can run approximately 320,000 values. $(10,000 *2^5)$.
 
 \section{Algorithm 3: Divide and Conquer}
@@ -108,7 +111,7 @@ When n doubles, the running time increases fourfold for an $O(n^2)$ algorithm. I
 The original problem size is a power of 2, so all sub sizes are integers. So the run time method of the program will be $O(n lg n)$. $T(n)=2T(n/2)+O(n)$ 
 
 \subsubsection{Psuedocode}
-The Max-SubArray is the initial call function, the base case is low=high. If a cross occurs then cross-SubArray is called. Cross-SubArray(low, mid, high, A)//Sub-Array for A[iÉ.mid]left-sum = [Infinity]for i = mid to lowsum= sum + A[i]	if sum>left-sum		left-sum=sum		max-left=i//Sub-Array for A[mid+1É.high]right-sum = [Infinity]for j = mid+1 to high	sum= sum + A[j]	if sum>right-sum		right-sum=sum		max-right=jreturn(max-left, max-right, left-sum+right-sum)//Initial call Max-SubArrayMax-SubArray(low, high, A)For i to array-sizeIf high==low	Return (A[low])	Else mid= [low + high)/2]		(Low-low, Low-high, Low-sum)= Max-SubArray (A, low, mid)		(Right-low, Right-high, Right-sum)= Max-SubArray (A, mid+1, high)		(Cross-low, Cross-high, Cross-sum)= Cross-SubArray(low, mid, high, A)		If left-sum>= right-sum and left-sum>= cross-sum			Return(left-low, left-high, left-sum)		ElseIf  right-sum>= left-sum and right-sum>= cross-sum			Return (right-low, right-high, right-sum)		ElseReturn (cross-low, cross-high, cross-sum)
+\lstinputlisting[language=Python]{algorithm3.py}
 
 \subsection{Proof of Correctness}
 
@@ -132,9 +135,11 @@ MaxSubarray(A, n) will return the sum of the maximum subarray of an array A of s
 
 \subsection{Extrapolation and Interpretation}
 \subsubsection{For each algorithm use the experimental data to estimate a function that models the relationship between running times and input sizes (n). Discuss any discrepancies between the experimental and theoretical running times.}
+\break
+While this graph was a bit less obvious, the general shape indicates a relationship similar to that of the linear running time. The data supports the theoretical running time of O(n log n) but just more than doubling each time n doubles. 
 
 \subsubsection{For each algorithm, what is the size of the biggest instance that you can solve with your algorithm in one hour?}
-
+\break
 When n doubles, the running time slightly more than doubles for an $O(n log n)$ algorithm. In one hour this algorithm can run approximately 409,600,000 values. $(100,000 *2^12)$.
 
 \section{Algorithm 4: Linear-Time}
@@ -165,9 +170,11 @@ return ans
 
 \subsection{Extrapolation and Interpretation}
 \subsubsection{For each algorithm use the experimental data to estimate a function that models the relationship between running times and input sizes (n). Discuss any discrepancies between the experimental and theoretical running times.}
+\break
+While the long term graph is a bit rough, the data supports a linear running time. Tracing through the data, the values follow the trend of doubling as n double. The exact data follows this trend in the long run, despite the few bumps.
 
 \subsubsection{For each algorithm, what is the size of the biggest instance that you can solve with your algorithm in one hour?}
-
+\break
 When n doubles, the running time doubles for an $O(n)$ algorithm. In one hour this algorithm can run approximately 3,276,800,000 values. $(100,000 *2^15)$.
 
 \newpage{}

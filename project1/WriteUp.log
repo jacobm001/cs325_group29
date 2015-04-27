@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012) (format=pdflatex 2012.6.30)  26 APR 2015 19:19
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012) (format=pdflatex 2012.6.30)  26 APR 2015 20:37
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -338,45 +338,70 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [4]
-<Alg2Log.png, id=27, 372.64218pt x 223.58531pt>
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [5]
+<Alg2Log.png, id=30, 372.64218pt x 223.58531pt>
 File: Alg2Log.png Graphic file (type png)
  <use Alg2Log.png>
-Package pdftex.def Info: Alg2Log.png used on input line 101.
+Package pdftex.def Info: Alg2Log.png used on input line 103.
 (pdftex.def)             Requested size: 372.64127pt x 223.58475pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [5 <./Alg2Log.png>]
-Missing character: There is no É in font cmr10!
-Missing character: There is no É in font cmr10!
- [6]
-Missing character: There is no Õ in font cmr10!
-Missing character: There is no Ô in font cmr10!
-Missing character: There is no Õ in font cmr10!
- <Alg3Log.png, id=34, 372.64218pt x 223.58531pt>
-File: Alg3Log.png Graphic file (type png)
+ [6 <./Alg2Log.png>]
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
-<use Alg3Log.png>
-Package pdftex.def Info: Alg3Log.png used on input line 198.
-(pdftex.def)             Requested size: 372.64127pt x 223.58475pt.
- [7 <./Alg3Log.png>]
-<Alg4Log.png, id=39, 372.64218pt x 223.58531pt>
-File: Alg4Log.png Graphic file (type png)
- <use Alg4Log.png>
-Package pdftex.def Info: Alg4Log.png used on input line 251.
-(pdftex.def)             Requested size: 372.64127pt x 223.58475pt.
- [8] [9 <./Alg4Log.png>] [10]
+ [7]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [8]
 (/usr/local/texlive/2012/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2004/09/05 1.3 listings language file
 )
-(./algorithm1.py
-LaTeX Font Info:    Try loading font information for OML+cmr on input line 9.
+(./algorithm3.py
+LaTeX Font Info:    Try loading font information for OML+cmr on input line 2.
  (/usr/local/texlive/2012/texmf-dist/tex/latex/base/omlcmr.fd
 File: omlcmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OML/cmr/m/n' in size <10.95> not available
-(Font)              Font shape `OML/cmm/m/it' tried instead on input line 9.
-) (./algorithm2.py) (./algorithm3.py [11]) (./algorithm4.py) (./main.py
+(Font)              Font shape `OML/cmm/m/it' tried instead on input line 2.
+)
+Missing character: There is no Õ in font cmr10!
+Missing character: There is no Ô in font cmr10!
+Missing character: There is no Õ in font cmr10!
+[9] <Alg3Log.png, id=44, 372.64218pt x 223.58531pt>
+File: Alg3Log.png Graphic file (type png)
+ <use Alg3Log.png>
+Package pdftex.def Info: Alg3Log.png used on input line 169.
+(pdftex.def)             Requested size: 372.64127pt x 223.58475pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [10 <./Alg3Log.png>]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [11]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [12]
+<Alg4Log.png, id=54, 372.64218pt x 223.58531pt>
+File: Alg4Log.png Graphic file (type png)
+ <use Alg4Log.png>
+Package pdftex.def Info: Alg4Log.png used on input line 226.
+(pdftex.def)             Requested size: 372.64127pt x 223.58475pt.
+
+Underfull \vbox (badness 1158) has occurred while \output is active []
+
+ [13 <./Alg4Log.png>]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [14]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [15]
+[16] (./algorithm1.py) (./algorithm2.py) (./algorithm3.py [17])
+(./algorithm4.py) (./main.py
 LaTeX Font Info:    Try loading font information for OMS+cmr on input line 11.
 
 (/usr/local/texlive/2012/texmf-dist/tex/latex/base/omscmr.fd
@@ -384,7 +409,7 @@ File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 11.
- [12]
+ [18]
 Overfull \hbox (56.18044pt too wide) in paragraph at lines 30--32
 [][][][][][][][][][][][][][][][] 
  []
@@ -412,7 +437,7 @@ Overfull \hbox (102.17091pt too wide) in paragraph at lines 41--43
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [13]
+ [19]
 Overfull \hbox (16.76003pt too wide) in paragraph at lines 67--68
 [][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
@@ -437,7 +462,7 @@ Overfull \hbox (10.18996pt too wide) in paragraph at lines 78--79
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [14]
+ [20]
 Overfull \hbox (23.3301pt too wide) in paragraph at lines 110--111
 [][][][][][][][][][][][][][][][][][][][][][][][] 
  []
@@ -465,7 +490,7 @@ Overfull \hbox (115.31105pt too wide) in paragraph at lines 132--133
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [15]
+ [21]
 Overfull \hbox (102.17091pt too wide) in paragraph at lines 145--146
 [][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
@@ -490,15 +515,15 @@ Overfull \hbox (56.18044pt too wide) in paragraph at lines 152--154
 [][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
-) [16] (./WriteUp.aux) ) 
+) [22] (./WriteUp.aux) ) 
 Here is how much of TeX's memory you used:
- 4745 strings out of 493488
- 63957 string characters out of 3141326
- 176883 words of memory out of 3000000
+ 4747 strings out of 493488
+ 63985 string characters out of 3141326
+ 177369 words of memory out of 3000000
  7809 multiletter control sequences out of 15000+200000
  11946 words of font info for 46 fonts, out of 3000000 for 9000
  1118 hyphenation exceptions out of 8191
- 38i,6n,43p,346b,1518s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 38i,6n,43p,387b,1518s stack positions out of 5000i,500n,10000p,200000b,50000s
 </usr/local/texlive/2012/texmf-dist/fonts/type1/public/
 amsfonts/cm/cmbx10.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/public/a
 msfonts/cm/cmcsc10.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/public/a
@@ -510,10 +535,10 @@ m/cmsy10.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm
 /cmti10.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/
 cmti9.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cm
 tt10.pfb>
-Output written on WriteUp.pdf (16 pages, 173717 bytes).
+Output written on WriteUp.pdf (22 pages, 178119 bytes).
 PDF statistics:
- 101 PDF objects out of 1000 (max. 8388607)
- 67 compressed objects within 1 object stream
+ 120 PDF objects out of 1000 (max. 8388607)
+ 80 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  26 words of extra memory for PDF output out of 10000 (max. 10000000)
 
