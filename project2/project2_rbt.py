@@ -38,8 +38,63 @@ def changegreedy(array,K):
         result2[array.index(biggest)]=howmany
         result2=[result2,howmany]
         return addTwo(result1,result2)
+
+def changedp(array,K):
+    table={}
+    rows=[(i,j) for i,j in enumerate(array)]
+    cols=[(i,j) for i,j in enumerate(range(K+1))]
     
+    for row in rows:
+        r,rv=row
+        table[r]=[]
+        for col in cols:
+            c,cv=col
+            if r==0 and c==0:
+                frm=(0,0)
+                table[r]+=[(0,frm)] 
+            elif r==0:#top row
+                backval=table[r][c-rv][0]+1
+                frm=(r,c-rv)
+                table[r]+=[(backval,frm)]   
+            elif cv<rv:#beginning of a row
+                rowabove=r-1
+                cellaboveval=table[rowabove][c][0]
+                frm=(r-1,c)
+                table[r]+=[(cellaboveval,frm)]
+            else:#last part of a row
+                rowabove=r-1
+                cellaboveval=table[rowabove][c][0]
+                backval=table[r][c-rv][0]+1
+                if cellaboveval<backval:
+                    frm=(r-1,c)
+                    table[r]+=[(cellaboveval,frm)]
+                else:
+                    frm=(r,c-rv)
+                    table[r]+=[(backval,frm)]                  
     
+    out=[0]*len(array)
+    r=len(table)-1
+    c=len(table[r])-1
+    mincoins=table[r][c][0]
+    current=(r,c)
+    pcol=current[1]
+    while True:
+        r=current[0]
+        c=current[1]
+        rv=rows[r][1]
+        
+        current=table[r][c][1]#next
+        ccol=current[1]
+        if ccol!=pcol:
+            out[array.index(rv)]+=1
+        pcol=ccol
+
+        if c==0:break
+    return [out,mincoins]
     
-print changeslow([1,2,4,8],15)
-print changegreedy([1,2,4,8],15)
+if __name__=='__main__': 
+    print changeslow([1,2,4,8],15)
+    print changegreedy([1,2,4,8],15)
+    print changedp([1,2,4,8],15)
+    print changedp([1,5,6,8],11)
+
