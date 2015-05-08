@@ -1,0 +1,17 @@
+The methodology for filling the dynamic programming table is as follows:
+
+First a table is constructed with columns [0..value we're looking for], interval of 1.  The rows are [0..number of coins we have].  Let the indexes be r & c so that a each cell has coordinate (r,c).  Let each row have a value of rv associated with the value for each coin, in increasing order.  Let each column have a value cv associated with the values for each column, [0..value we're looking for]. c and cv have the same range.
+
+If it is the first cell of the table, (0,0), the value is 0:
+
+Otherwise, for the cells in the first row, the value of each cell c1 is the value of the cell c2 which occurs rv intervals prior, plus 1 (where rv is the row's value).  Example:  if row 0 represents a 1 cent coin, its "row value" is 1.  Therefore, for cell (0,1), it's value will be the value of cell to its left by 1 (rv), which is cell (0,0), which has a value of 0, and this is increased by 1.
+
+Otherwise, for cells in the lower rows, at the beginning of the row:  all cells from (0,r) (where are is the row) inward are carried down from the cell immediately above each.  Thus, which cv<rv for each cell, carry down from above.
+
+Otherwise, for cells in the endings of each row: compute the minimum of the value immediately above with the value compared with the value of the cell to the left rv hops, plus 1.   That is, the minimum of a) value of cell(r-1,c) or b) (value of cell(r,c-rv))+1.
+
+This methodology is correct.  Firstly, smaller problems are being solved starting with the smallest rows and starting with the smallest values within those rows, working from the top left corner of the table down to the bottom right corner.  The process builds from smallest solutions to greatest.  
+
+Secondly, populating the top row gives solutions as if the 1 coin were the only coin available.  Each solution on the left helps develop the answer to its right.  However, the subsequent rows are all populated thusly:  the first portion of the row has solutions too small for that row's coin to solve, so the optimal solution from above is copied down.  The second portion of the row is populated by using the matching optimal solution to the left plus that row's coin, or the optimal solution above.  This process allows new information to be introduced (the new, higher valued coin) and used in an optimal solution, or to use the solution above if it is superior.  Each successive row can, potentially, copy down the optimal solutions developed by the lower valued coins. 
+
+In this way, there is an ongoing evaluation as to whether to accept the results from prior stages in the problem or use newly computed results.
