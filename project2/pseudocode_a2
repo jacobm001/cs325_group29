@@ -1,0 +1,27 @@
+FUNCTION addTwo(first,second):
+    RETURN [[x+y for x,y in zip(first[0],second[0])],
+                    first[1]+second[1]]
+ENDFUNCTION
+
+FUNCTION changegreedy(array,K):
+    IF array.__contains__(K):
+        out=[0]*len(array)
+        out[array.index(K)]=1
+        RETURN [out,1]
+    ELSE:
+        biggest=array[-1]
+        for i in range(len(array)-2,-1,-1):
+            IF biggest<=K:
+                break
+            ELSE:
+                biggest=array[i]
+            ENDIF
+        ENDFOR
+        howmany=int(K/biggest)
+        result1=changegreedy(array,K-(howmany*biggest))
+        result2=[0]*len(array)
+        result2[array.index(biggest)]=howmany
+        result2=[result2,howmany]
+        RETURN addTwo(result1,result2)
+    ENDIF
+ENDFUNCTION
