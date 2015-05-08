@@ -18,7 +18,10 @@ FUNCTION changegreedy(array,K):
             ENDIF
         ENDFOR
         howmany=int(K/biggest)
-        result1=changegreedy(array,K-(howmany*biggest))
+        result1=[[],0]
+        IF K!=howmany*biggest:
+            result1=changegreedy(array,K-(howmany*biggest))
+        ENDIF
         result2=[0]*len(array)
         result2[array.index(biggest)]=howmany
         result2=[result2,howmany]
