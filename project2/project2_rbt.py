@@ -33,7 +33,9 @@ def changegreedy(array,K):
             else:
                 biggest=array[i]
         howmany=int(K/biggest)
-        result1=changegreedy(array,K-(howmany*biggest))
+        result1=[[],0]
+        if K!=howmany*biggest:
+            result1=changegreedy(array,K-(howmany*biggest))
         result2=[0]*len(array)
         result2[array.index(biggest)]=howmany
         result2=[result2,howmany]
