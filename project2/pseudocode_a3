@@ -1,0 +1,63 @@
+FUNCTION addTwo(first,second):
+    RETURN [[x+y for x,y in zip(first[0],second[0])],
+                    first[1]+second[1]]
+ENDFUNCTION
+
+FUNCTION changedp(array,K):
+    table={}
+    rows=[(i,j) for i,j in enumerate(array)]
+                ENDFOR
+    cols=[(i,j) for i,j in enumerate(range(K+1))]
+                ENDFOR
+    for row in rows:
+        r,rv=row
+        table[r]=[]
+        for col in cols:
+            c,cv=col
+            IF r==0 AND c==0:
+                frm=(0,0)
+                table[r]+=[(0,frm)] 
+            ELSEIF r==0:#top row
+                backval=table[r][c-rv][0]+1
+                frm=(r,c-rv)
+                table[r]+=[(backval,frm)]   
+            ELSEIF cv<rv:#beginning of a row
+                rowabove=r-1
+                cellaboveval=table[rowabove][c][0]
+                frm=(r-1,c)
+                table[r]+=[(cellaboveval,frm)]
+            else:#last part of a row
+                rowabove=r-1
+                cellaboveval=table[rowabove][c][0]
+                backval=table[r][c-rv][0]+1
+                IF cellaboveval<backval:
+                    frm=(r-1,c)
+                    table[r]+=[(cellaboveval,frm)]
+                ELSE:
+                    frm=(r,c-rv)
+                    table[r]+=[(backval,frm)]                  
+            ENDIF
+                ENDIF
+    ENDFOR
+        ENDFOR
+    out=[0]*len(array)
+    r=len(table)-1
+    c=len(table[r])-1
+    mincoins=table[r][c][0]
+    current=(r,c)
+    pcol=current[1]
+    while True:
+        r=current[0]
+        c=current[1]
+        rv=rows[r][1]
+        current=table[r][c][1]#next
+        ccol=current[1]
+        IF ccol!=pcol:
+            out[array.index(rv)]+=1
+        ENDIF
+        pcol=ccol
+        IF c==0:break
+        ENDIF
+    ENDWHILE
+    RETURN [out,mincoins]
+ENDFUNCTION
