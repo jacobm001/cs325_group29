@@ -1,0 +1,25 @@
+FUNCTION addTwo(first,second):
+    RETURN [[x+y for x,y in zip(first[0],second[0])],
+                    first[1]+second[1]]
+ENDFUNCTION
+
+FUNCTION changeslow(array,K):
+    IF array.__contains__(K):
+        out=[0]*len(array)
+        out[array.index(K)]=1
+        RETURN [out,1]
+    ELSE:
+        minimum=None
+        for i in array:
+            IF not i<K:break
+            ENDIF
+            result1=changeslow(array,i)
+            result2=changeslow(array,K-i)
+            result=addTwo(result1,result2)
+            IF minimum==None OR result[1]<minimum[1]:
+                minimum=result
+            ENDIF
+        ENDFOR
+        RETURN minimum
+    ENDIF
+ENDFUNCTION
