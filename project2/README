@@ -1,0 +1,8 @@
+# Command Line Application #
+code/main.py filename.txt will run the application and store the results in filenamechange.txt.  
+
+## error handling ##
+If there isn't an argument supplied, or the input file does not exist, the application will fail gracefully.
+
+# code/questions.py #
+Run questions.py to calculate data needed for questions.  Files will be created as questions/*.csv.
