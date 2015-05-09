@@ -85,11 +85,11 @@ def time_dp():
 	f.write('A,Time\n')
 
 	V = [1,5,10,25]
-	for A in range(100, 1000001, 100):
+	for A in range(100, 1000001, 1000):
 		t = Timer(lambda: changedp(V,A)).timeit(number=3)
 		f.write('{0},{1}\n'.format(A,t))
 		
-		if t >= 10:
+		if t >= 2:
 			break
 
 	f.close()
@@ -101,7 +101,7 @@ if __name__ == "__main__":
 	print 'q5'
 	q5()
 	
-	print 'q5'
+	print 'q6'
 	q6()
 
 	print 'slow'
