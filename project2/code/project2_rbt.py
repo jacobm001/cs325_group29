@@ -98,8 +98,8 @@ if __name__=='__main__':
     A = 15
     V = [1,2,4,8]
     print 'Test 1'
-    print '  slow:   ', changeslow(V,A)
     print '  greedy: ', changegreedy(V,A)
+    print '  slow:   ', changeslow(V,A)
     print '  dp:     ', changedp(V,A)
     
     # test 2
