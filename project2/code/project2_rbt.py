@@ -93,8 +93,30 @@ def changedp(array,K):
     return [out,mincoins]
     
 if __name__=='__main__': 
-    print changeslow([1,2,4,8],15)
-    print changegreedy([1,2,4,8],15)
-    print changedp([1,2,4,8],15)
-    print changedp([1,5,6,8],11)
+    # test 1
+    # all should return [1,1,1,1]
+    A = 15
+    V = [1,2,4,8]
+    print 'Test 1'
+    print '  slow:   ', changeslow(V,A)
+    print '  greedy: ', changegreedy(V,A)
+    print '  dp:     ', changedp(V,A)
+    
+    # test 2
+    # greedy should return [2,1,0,2]
+    # slow and dp should return [0,1,2,1]
+    A = 29
+    V = [1,3,7,12]
+    print 'Test 2'
+    print '  greedy: ', changegreedy(V,A)
+    print '  slow:   ', changeslow(V,A)
+    print '  dp:     ', changedp(V,A)
 
+    # test 3
+    # all should return [0,0,1,2]
+    A = 31
+    V = [1,3,7,12]
+    print 'Test 3'
+    print '  greedy: ', changegreedy(V,A)
+    print '  slow:   ', changeslow(V,A)
+    print '  dp:     ', changedp(V,A)
