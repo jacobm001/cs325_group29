@@ -2,8 +2,6 @@ def addTwo(first,second):
     return [[x+y for x,y in zip(first[0],second[0])],
                     first[1]+second[1]]
 
-
-
 def changeslow(array,K):
     if array.__contains__(K):
         out=[0]*len(array)
