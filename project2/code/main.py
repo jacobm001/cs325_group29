@@ -37,3 +37,5 @@ if __name__ == "__main__":
 
 	if os.path.isfile(sys.argv[1]):
 		process_file(sys.argv[1])
+	else:
+		print 'File, {0}, does not exist'.format(sys.argv[1])
