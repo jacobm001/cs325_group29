@@ -3,7 +3,7 @@ def addTwo(first,second):
                     first[1]+second[1]]
 
 def changeslow(array,K):
-    if array.__contains__(K):
+    if K in array:
         out=[0]*len(array)
         out[array.index(K)]=1
         return [out,1]
@@ -18,26 +18,19 @@ def changeslow(array,K):
                 minimum=result
         return minimum
 
-def changegreedy(array,K):
-    if array.__contains__(K):
-        out=[0]*len(array)
-        out[array.index(K)]=1
-        return [out,1]
+def changegreedy(array,K,i=0):
+    zeroarray=[0]*len(array)
+    if K==0:
+        return [zeroarray,0]
     else:
-        biggest=array[-1]
-        for i in range(len(array)-2,-1,-1):
-            if biggest<=K:
-                break
-            else:
-                biggest=array[i]
+        index=len(array)-1-i
+        biggest=array[index]
         howmany=int(K/biggest)
-        result1=[[],0]
-        if K!=howmany*biggest:
-            result1=changegreedy(array,K-(howmany*biggest))
-        result2=[0]*len(array)
-        result2[array.index(biggest)]=howmany
-        result2=[result2,howmany]
-        return addTwo(result1,result2)
+        deduct=biggest*howmany
+        zeroarray[index]=howmany
+        resulthere=[zeroarray,howmany]
+        resultbelow=changegreedy(array,K-deduct,i+1)
+        return addTwo(resulthere,resultbelow)
 
 def changedp(array,K):
     table={}
@@ -92,7 +85,7 @@ def changedp(array,K):
         if c==0:break
     return [out,mincoins]
     
-if __name__=='__main__': 
+if __name__=='__main__':
     # test 1
     # all should return [1,1,1,1]
     A = 15
