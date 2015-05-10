@@ -4,7 +4,7 @@ FUNCTION addTwo(first,second):
 ENDFUNCTION
 
 FUNCTION changeslow(array,K):
-    IF array.__contains__(K):
+    IF K in array:
         out=[0]*len(array)
         out[array.index(K)]=1
         RETURN [out,1]
