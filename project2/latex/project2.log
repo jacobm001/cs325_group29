@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012) (format=pdflatex 2012.6.30)  10 MAY 2015 16:24
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012) (format=pdflatex 2012.6.30)  10 MAY 2015 17:07
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -320,7 +320,54 @@ e
 \c@lstlisting=\count117
 
 [1{/usr/local/texlive/2012/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-(/usr/local/texlive/2012/texmf-dist/tex/latex/listings/lstlang1.sty
+(./project2.toc
+Underfull \hbox (badness 10000) in paragraph at lines 2--2
+ []  
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 4--4
+ []  
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 6--6
+ []  
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 8--8
+ []  
+ []
+
+Missing character: There is no ² in font cmr8!
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [2]
+Missing character: There is no á in font cmr10!
+Missing character: There is no á in font cmr10!
+Missing character: There is no á in font cmr10!
+
+Underfull \hbox (badness 10000) in paragraph at lines 18--18
+ []  
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 19--19
+ []  
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 20--20
+ []  
+ []
+
+)
+\tf@toc=\write3
+\openout3 = `project2.toc'.
+
+ [3] (/usr/local/texlive/2012/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2004/09/05 1.3 listings language file
 )
 (./pseudocode/pseudocode_a1.txt
@@ -337,4 +384,95 @@ LaTeX Font Info:    Try loading font information for OML+cmr on input line 14.
 File: omlcmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OML/cmr/m/n' in size <10.95> not available
-(Font)        
+(Font)              Font shape `OML/cmm/m/it' tried instead on input line 14.
+)
+(./pseudocode/pseudocode_a2.txt [4]) (./pseudocode/pseudocode_a3.txt [5]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [6])
+[7]
+Underfull \hbox (badness 10000) in paragraph at lines 63--65
+
+ []
+
+Missing character: There is no ² in font cmr8!
+Missing character: There is no á in font cmr10!
+Missing character: There is no á in font cmr10!
+Missing character: There is no á in font cmr10!
+[8] [9] (./code/main.py [10])
+Overfull \hbox (23.3301pt too wide) in paragraph at lines 41--96
+[][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+(./code/project2_rbt.py [11]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [12]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [13])
+(./code/questions.py
+Overfull \hbox (3.61989pt too wide) in paragraph at lines 16--18
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (89.03078pt too wide) in paragraph at lines 22--24
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (161.30153pt too wide) in paragraph at lines 33--35
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
+] 
+ []
+
+[14]
+Overfull \hbox (3.61989pt too wide) in paragraph at lines 51--53
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (10.18996pt too wide) in paragraph at lines 61--62
+[][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (23.3301pt too wide) in paragraph at lines 75--76
+[][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [15])
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [16]
+(./project2.aux) ) 
+Here is how much of TeX's memory you used:
+ 4742 strings out of 493488
+ 63957 string characters out of 3141326
+ 168913 words of memory out of 3000000
+ 7804 multiletter control sequences out of 15000+200000
+ 11778 words of font info for 45 fonts, out of 3000000 for 9000
+ 1118 hyphenation exceptions out of 8191
+ 38i,6n,43p,789b,1516s stack positions out of 5000i,500n,10000p,200000b,50000s
+</usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfon
+ts/cm/cmbx10.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfont
+s/cm/cmcsc10.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfont
+s/cm/cmmi10.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts
+/cm/cmmi8.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/c
+m/cmr10.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/
+cmr8.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmr
+9.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10
+.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.
+pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmti9.pf
+b>
+Output written on project2.pdf (16 pages, 159494 bytes).
+PDF statistics:
+ 96 PDF objects out of 1000 (max. 8388607)
+ 67 compressed objects within 1 object stream
+ 0 named destinations out of 1000 (max. 500000)
+ 1 words of extra memory for PDF output out of 10000 (max. 10000000)
+
