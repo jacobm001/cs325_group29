@@ -21,41 +21,33 @@
 
 \section{Changeslow Algorithm}
 The changeslow algorithm can also be called brute force or divide and conquer. We used the algorithm to find the minimum number of coins to make i and $K-i$ cents. 
-\subsection{Pseudocode\newline}
+\subsection{Pseudocode}
 This is the pseudocode for the Changeslow Algorithm. It completes the requirement for Question 2. 
 \lstinputlisting[language=Python]{pseudocode/pseudocode_a1.txt}
 
 \section{Greedy Algorithm}
 The greedy algorithm starts with the largest values and goes through the lower values ignored to determine the lowest number of coins to make i and $K-i$ cents. 
-\subsection{Pseudocode\newline}
+\subsection{Pseudocode}
 This is the pseudocode for the Greedy Algorithm. It completes the requirement for Question 2. 
 \lstinputlisting[language=Python]{pseudocode/pseudocode_a2.txt}
 
 \section{Dynamic Programming}
 Dynamic programming stores the calculated values to reduce the running time for larger values. 
-\subsection{Pseudocode\newline}
+\subsection{Pseudocode}
 This is the pseudocode for the Dynamic Programming. It completes the requirement for Question 2. 
 \lstinputlisting[language=Python]{pseudocode/pseudocode_a3.txt}
 
 \section{Questions}
-\subsection{Describe, in words, how you fill in the dynamic programming table in changedp. Justify why is this a valid way to fill the table?\newline}
+\subsection{Describe, in words, how you fill in the dynamic programming table in changedp. Justify why is this a valid way to fill the table?}
 
-The methodology for filling the dynamic programming table is as follows:
-\par
-First a table is constructed with columns [0..value we're looking for], interval of 1.  The rows are [0..number of coins we have].  Let the indexes be r and c so that a each cell has coordinate (r, c).  Let each row have a value of rv associated with the value for each coin, in increasing order.  Let each column have a value cv associated with the values for each column, [0..value we're looking for]. c and cv have the same range.
-\par
-If it is the first cell of the table, (0,0), the value is 0:
-\par
-Otherwise, for the cells in the first row, the value of each cell c1 is the value of the cell c2 which occurs rv intervals prior, plus 1 (where rv is the row's value).  Example:  if row 0 represents a 1 cent coin, its "row value" is 1.  Therefore, for cell (0,1), it's value will be the value of cell to its left by 1 (rv), which is cell (0,0), which has a value of 0, and this is increased by 1.
-\par
-Otherwise, for cells in the lower rows, at the beginning of the row:  all cells from (0,r) (where are is the row) inward are carried down from the cell immediately above each.  Thus, which cv<rv for each cell, carry down from above.
-\par
-Otherwise, for cells in the endings of each row: compute the minimum of the value immediately above with the value compared with the value of the cell to the left rv hops, plus 1.   That is, the minimum of a) value of cell(r-1,c) or b) (value of cell$(r,c-rv))+1$.
-\par
-This methodology is correct.  Firstly, smaller problems are being solved starting with the smallest rows and starting with the smallest values within those rows, working from the top left corner of the table down to the bottom right corner.  The process builds from smallest solutions to greatest.  
-\par
-Secondly, populating the top row gives solutions as if the 1 coin were the only coin available.  Each solution on the left helps develop the answer to its right.  However, the subsequent rows are all populated thusly:  the first portion of the row has solutions too small for that row's coin to solve, so the optimal solution from above is copied down.  The second portion of the row is populated by using the matching optimal solution to the left plus that row's coin, or the optimal solution above.  This process allows new information to be introduced (the new, higher valued coin) and used in an optimal solution, or to use the solution above if it is superior.  Each successive row can, potentially, copy down the optimal solutions developed by the lower valued coins. 
-\par
+The methodology for filling the dynamic programming table is as follows:\\
+First a table is constructed with columns [0..value we're looking for], interval of 1.  The rows are [0..number of coins we have].  Let the indexes be r and c so that a each cell has coordinate (r, c).  Let each row have a value of rv associated with the value for each coin, in increasing order.  Let each column have a value cv associated with the values for each column, [0..value we're looking for]. c and cv have the same range.\\
+If it is the first cell of the table, (0,0), the value is 0:\\
+Otherwise, for the cells in the first row, the value of each cell c1 is the value of the cell c2 which occurs rv intervals prior, plus 1 (where rv is the row's value).  Example:  if row 0 represents a 1 cent coin, its "row value" is 1.  Therefore, for cell (0,1), it's value will be the value of cell to its left by 1 (rv), which is cell (0,0), which has a value of 0, and this is increased by 1.\\
+Otherwise, for cells in the lower rows, at the beginning of the row:  all cells from (0,r) (where are is the row) inward are carried down from the cell immediately above each.  Thus, which cv<rv for each cell, carry down from above.\\
+Otherwise, for cells in the endings of each row: compute the minimum of the value immediately above with the value compared with the value of the cell to the left rv hops, plus 1.   That is, the minimum of a) value of cell(r-1,c) or b) (value of cell$(r,c-rv))+1$.\\
+This methodology is correct.  Firstly, smaller problems are being solved starting with the smallest rows and starting with the smallest values within those rows, working from the top left corner of the table down to the bottom right corner.  The process builds from smallest solutions to greatest.  \\
+Secondly, populating the top row gives solutions as if the 1 coin were the only coin available.  Each solution on the left helps develop the answer to its right.  However, the subsequent rows are all populated thusly:  the first portion of the row has solutions too small for that row's coin to solve, so the optimal solution from above is copied down.  The second portion of the row is populated by using the matching optimal solution to the left plus that row's coin, or the optimal solution above.  This process allows new information to be introduced (the new, higher valued coin) and used in an optimal solution, or to use the solution above if it is superior.  Each successive row can, potentially, copy down the optimal solutions developed by the lower valued coins. \\
 In this way, there is an ongoing evaluation as to whether to accept the results from prior stages in the problem or use newly computed results.
 \\
 
@@ -64,7 +56,18 @@ See Sections 1-3.
 
 
 \subsection{Prove that the dynamic programming approach is correct by induction. That is, prove that
-$T[v] = min_{v(i)²v}{T[v-V[i]] + 1}, T[0] = 0$ is the minimum number of coins possible to make change for value v.}
+$T[v] = min_{V(i)²v}{T[v-V[i]] + 1}, T[0] = 0$ is the minimum number of coins possible to make change for value v.}
+
+Let T[v] be the minimum number of coins to create the sum v, where V[i] are the coin denominations. \\
+Starting with T[0] = 0, when the sum is 0, is requires 0 coins. \\
+There must exist a value $V[i]  <= v$\\
+The optimal solution then exists where $v - V[i]$\\
+Taking T[0] = 0, T[v] = T[v - v[i]] + 1.\\
+Because there are multiple possibilities that fit the scenarios above, T[v] must be the minimum solution of the possibilities.\\
+Therefore, $T[v] = min_{V(i)²v}{T[v-V[i]] + 1}$
+
+\newline
+**Based off code found at $http://www.ccs.neu.edu/home/jaa/CS7800.12F/Information/Handouts/dyn_prog.pdf$ written by Professor Aslam at Northeastern University for CS7800.
 
 
 \subsection{Suppose V = [1, 5, 10, 25, 50]. For each integer value of A in [2010, 2015, 2020, ..., 2200] determine the number of coins that changegreedy and changedp requires. You can attempt to run changeslow however if it takes too long you can select smaller values of A and also run the other algorithms on the values. Plot the number of coins as a function of A for each algorithm. How do the approaches compare?}
@@ -117,8 +120,7 @@ Consistent with the other lines of best fit, the changeslow algorithm runs signi
 See Figure 14.\newline
 The log-log graph is a much more efficient comparison between the changegreedy and changedp algorithms. Because they are both so close running time, this is able to show the differences better, as with all the other log-log plots. This plot shows the same results as the other plots and the changegreedy is more efficient and the changedp algorithms will continue to increase in running time for very large sums.
 \\
-See Figure 15.
-\newline
+See Figure 15.\newline
 Because of the wider range of coin values, the running times are much faster for this algorithm. However, as expected, the changeslow algorithm runs much less efficiently when compared to the other two algorithms. 
 \\
 See Figure 16.\newline
