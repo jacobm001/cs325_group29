@@ -64,10 +64,10 @@ There must exist a value $V[i]  <= v$\\
 The optimal solution then exists where $v - V[i]$\\
 Taking T[0] = 0, T[v] = T[v - v[i]] + 1.\\
 Because there are multiple possibilities that fit the scenarios above, T[v] must be the minimum solution of the possibilities.\\
-Therefore, $T[v] = min_{V(i)Вv}{T[v-V[i]] + 1}$
-
-\newline
-**Based off code found at $http://www.ccs.neu.edu/home/jaa/CS7800.12F/Information/Handouts/dyn_prog.pdf$ written by Professor Aslam at Northeastern University for CS7800.
+Therefore, $T[v] = min_{V(i)Вv}{T[v-V[i]] + 1}$\newline
+**Based off code found at \\
+$http://www.ccs.neu.edu/home/jaa/CS7800.12F/Information/Handouts/dyn_prog.pdf$ \\
+written by Professor Aslam at Northeastern University for CS7800.
 
 
 \subsection{Suppose V = [1, 5, 10, 25, 50]. For each integer value of A in [2010, 2015, 2020, ..., 2200] determine the number of coins that changegreedy and changedp requires. You can attempt to run changeslow however if it takes too long you can select smaller values of A and also run the other algorithms on the values. Plot the number of coins as a function of A for each algorithm. How do the approaches compare?}
@@ -136,7 +136,7 @@ For the larger sum (10,000), only the changegreedy and changedp algorithms are e
 
 \subsection{Suppose you are living in a country where coins have values that are powers of p, $V = [p^0 , p^1 , p^2 , ссс , p^n]$. How do you think the dynamic programming and greedy approaches would compare? Explain}
 See Figure 19.\newline
-Based off the evaluations described above and Figure 19, the changegreedy would most definitely be a more efficient algorithm. The changedp would still be efficient enough to operate on a normal computer, but for vary large sums, the running time would get beyond what is practical. However, changegreedy does not appear to be increasing for this set of V. Changegreedy would continue to be the more efficient option for evaluation, the graphs and testing indicate no upward trend in the long run for very large sum values. 
+Based off the evaluations described above and Figure 19, the changegreedy would most definitely be a more efficient algorithm. The changedp would still be efficient enough to operate on a normal computer, but for vary large sums, the running time would get beyond what is practical. However, changegreedy does not appear to be increasing for this set of V. Changegreedy would continue to be the more efficient option for evaluation, the graphs and testing indicate no upward trend in the long run for very large sum values. *Note: Latex was causing errors with this final image. See the separate file to know the image to which we are referring. The conclusions drawn still remain. 
 
 
 \newpage{}
@@ -264,10 +264,5 @@ Listed here are the figures, in order. Latex was not cooperating with putting th
 \caption{Log-Log, Sum = 10,000}
 \end{figure}
 
-\autoref{q9chart1.png}
-\begin{figure}[H!]
-\includegraphics[width=\textwidth,height=\textheight,keepaspectratio]{q9chart1.png}
-\caption{Long Term Comparison of Dynamic Programming and the Greedy Algorithm}
-\end{figure}
 
 \end{document}  
