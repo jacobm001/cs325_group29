@@ -1,55 +1,35 @@
-tomatoe[energy]  = 21
-tomatoe[protein] = 0.85
-tomatoe[fat]     = 0.33
-tomatoe[carbs]   = 4.64
-tomatoe[sodium]  = 9.00
-tomatoe[cost]    = 1.00
+cost[tomatoe_, lettuce_, spinach_, carrot_, sunflower_, tofu_, chickpea_, oil_] := 1*tomatoe + .75*lettuce + 
+	.5*spinach + .5*carrot + .45*sunflower + 2.15*tofu + .95*chickpea + 2*oil
 
-lettuce[energy]  = 16
-lettuce[protein] = 1.62
-lettuce[fat]     = 0.20
-lettuce[carbs]   = 2.37
-lettuce[sodium]  = 28.00
-lettuce[cost]    = 0.75
+energy[tomatoe_, lettuce_, spinach_, carrot_, sunflower_, tofu_, chickpea_, oil_] := 21*tomatoe + 16*lettuce +
+	40*spinach + 41*carrot + 585*sunflower + 120*tofu + 164*chickpea + 884*oil
 
-spinach[energy]  = 40
-spinach[protein] = 2.86
-spinach[fat]     = 0.39
-spinach[carbs]   = 3.63
-spinach[sodium]  = 65.00
-spinach[cost]    = 0.50
+protein[tomatoe_, lettuce_, spinach_, carrot_, sunflower_, tofu_, chickpea_, oil_] := .85*tomatoe + 1.62*lettuce +
+	2.86*spinach + 0.93*carrot + 23.4*sunflower + 16.00*tofu + 2.6*chickpea + 0*oil
 
-carrot[energy]  = 41
-carrot[protein] = 0.93
-carrot[fat]     = 0.24
-carrot[carbs]   = 9.58
-carrot[sodium]  = 69.00
-carrot[cost]    = 0.50
+fat[tomatoe_, lettuce_, spinach_, carrot_, sunflower_, tofu_, chickpea_, oil_] := 0.33*tomatoe + 0.20*lettuce +
+	0.39*spinach + 0.24*carrot + 48.7*sunflower + 5*tofu + 2.6*chickpea + 100.00*oil
 
-sunflower[energy]  = 585
-sunflower[protein] = 23.4
-sunflower[fat]     = 48.7
-sunflower[carbs]   = 15.00
-sunflower[sodium]  = 3.80
-sunflower[cost]    = 0.45
+carbs[tomatoe_, lettuce_, spinach_, carrot_, sunflower_, tofu_, chickpea_, oil_] := 4.64*tomatoe + 2.37*lettuce +
+	3.63*spinach + 9.58*carrot + 15.00*sunflower + 3.00*tofu + 27.0*chickpea + 0*oil
 
-tofu[energy]  = 120
-tofu[protein] = 16.00
-tofu[fat]     = 5.00
-tofu[carbs]   = 3.00
-tofu[sodium]  = 120.00
-tofu[cost]    = 2.15
+sodium[tomatoe_, lettuce_, spinach_, carrot_, sunflower_, tofu_, chickpea_, oil_] := 9.00*tomatoe + 28.00*lettuce +
+	65.00*spinach + 69.00*carrot + 3.80*sunflower + 120.00*tofu + 78.00*chickpea + 0*oil
 
-chickpeas[energy]  = 164
-chickpeas[protein] = 9.00
-chickpeas[fat]     = 2.6
-chickpeas[carbs]   = 27.00
-chickpeas[sodium]  = 78.00
-chickpeas[cost]    = 0.95
-
-oil[energy]  = 884
-oil[protein] = 0
-oil[fat]     = 100.00
-oil[carbs]   = 0
-oil[sodium]  = 0
-oil[cost]    = 2.00
+Minimize[{cost[tomatoe,lettuce,spinach,carrot,sunflower,tofu,chickpea,oil],
+	tomatoe >= 0
+	&& lettuce >= 0
+	&& spinach >= 0
+	&& carrot >= 0
+	&& sunflower >= 0
+	&& tofu >= 0
+	&& chickpea >= 0
+	&& oil >= 0
+	&& ((lettuce + spinach)/(tomatoe+lettuce+spinach+carrot+sunflower+tofu+chickpea+oil)) >= .4
+	&& protein[tomatoe,lettuce,spinach,carrot,sunflower,tofu,chickpea,oil] >= 15
+	&& fat[tomatoe,lettuce,spinach,carrot,sunflower,tofu,chickpea,oil] <= 8
+	&& fat[tomatoe,lettuce,spinach,carrot,sunflower,tofu,chickpea,oil] >= 2
+	&& sodium[tomatoe,lettuce,spinach,carrot,sunflower,tofu,chickpea,oil] <= 200
+	},
+	{tomatoe,lettuce,spinach,carrot,sunflower,tofu,chickpea,oil}
+]
