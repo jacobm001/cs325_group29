@@ -5,7 +5,7 @@ energy[tomatoe_, lettuce_, spinach_, carrot_, sunflower_, tofu_, chickpea_, oil_
 	40*spinach + 41*carrot + 585*sunflower + 120*tofu + 164*chickpea + 884*oil
 
 protein[tomatoe_, lettuce_, spinach_, carrot_, sunflower_, tofu_, chickpea_, oil_] := .85*tomatoe + 1.62*lettuce +
-	2.86*spinach + 0.93*carrot + 23.4*sunflower + 16.00*tofu + 2.6*chickpea + 0*oil
+	2.86*spinach + 0.93*carrot + 23.4*sunflower + 16.00*tofu + 9.0*chickpea + 0*oil
 
 fat[tomatoe_, lettuce_, spinach_, carrot_, sunflower_, tofu_, chickpea_, oil_] := 0.33*tomatoe + 0.20*lettuce +
 	0.39*spinach + 0.24*carrot + 48.7*sunflower + 5*tofu + 2.6*chickpea + 100.00*oil
