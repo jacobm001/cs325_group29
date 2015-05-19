@@ -16,7 +16,7 @@ carbs[tomatoe_, lettuce_, spinach_, carrot_, sunflower_, tofu_, chickpea_, oil_]
 sodium[tomatoe_, lettuce_, spinach_, carrot_, sunflower_, tofu_, chickpea_, oil_] := 9.00*tomatoe + 28.00*lettuce +
 	65.00*spinach + 69.00*carrot + 3.80*sunflower + 120.00*tofu + 78.00*chickpea + 0*oil
 
-Minimize[{cost[tomatoe,lettuce,spinach,carrot,sunflower,tofu,chickpea,oil],
+data = Minimize[{energy[tomatoe,lettuce,spinach,carrot,sunflower,tofu,chickpea,oil],
 	tomatoe >= 0
 	&& lettuce >= 0
 	&& spinach >= 0
@@ -25,11 +25,13 @@ Minimize[{cost[tomatoe,lettuce,spinach,carrot,sunflower,tofu,chickpea,oil],
 	&& tofu >= 0
 	&& chickpea >= 0
 	&& oil >= 0
-	&& ((lettuce + spinach)/(tomatoe+lettuce+spinach+carrot+sunflower+tofu+chickpea+oil)) >= .4
 	&& protein[tomatoe,lettuce,spinach,carrot,sunflower,tofu,chickpea,oil] >= 15
-	&& fat[tomatoe,lettuce,spinach,carrot,sunflower,tofu,chickpea,oil] <= 8
-	&& fat[tomatoe,lettuce,spinach,carrot,sunflower,tofu,chickpea,oil] >= 2
+	&& 2 <= fat[tomatoe,lettuce,spinach,carrot,sunflower,tofu,chickpea,oil] <= 8
 	&& sodium[tomatoe,lettuce,spinach,carrot,sunflower,tofu,chickpea,oil] <= 200
+	&& carbs[tomatoe,lettuce,spinach,carrot,sunflower,tofu,chickpea,oil] >= 4
+	&& ((lettuce + spinach)/(tomatoe+lettuce+spinach+carrot+sunflower+tofu+chickpea+oil)) >= .40
 	},
 	{tomatoe,lettuce,spinach,carrot,sunflower,tofu,chickpea,oil}
 ]
+
+Export["out.csv", data, "csv"]
