@@ -27,7 +27,7 @@ data = Minimize[{energy[tomato,lettuce,spinach,carrot,sunflower,tofu,chickpea,oi
     && oil >= 0
     && protein[tomato,lettuce,spinach,carrot,sunflower,tofu,chickpea,oil] >= 15
     && 2 <= fat[tomato,lettuce,spinach,carrot,sunflower,tofu,chickpea,oil] <= 8
-    && sodium[tomato,lettuce,spinach,carrot,sunflower,tofu,chickpea,oil] <= 200
+    && sodium[tomato,lettuce,spinach,carrot,sunflower,tofu,chickpea,oil] <= .2
     && carbs[tomato,lettuce,spinach,carrot,sunflower,tofu,chickpea,oil] >= 4
     && ((lettuce + spinach)/(tomato+lettuce+spinach+carrot+sunflower+tofu+chickpea+oil)) >= .40
     },
