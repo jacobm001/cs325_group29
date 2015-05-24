@@ -1,0 +1,716 @@
+\documentclass[12pt]{report}
+
+%\usepackage{ucs}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{babel}
+\usepackage{fontenc}
+
+\usepackage{graphicx}
+\usepackage{color}
+\usepackage{pdfpages}
+
+\usepackage{setspace}
+\usepackage{parskip} %to adjust spacing
+\usepackage[margin=0.5in]{geometry} %to adjust margins
+%\usepackage[dvips,pdftex]{hyperref}
+\usepackage{hyperref}
+  
+  
+
+\begin{document}
+  
+\singlespacing
+
+\textbf{Problem 1}
+
+\textbf{Part A)}\\
+
+i: the objective function is MINIMIZE 10P1W1 +15P1W2 +11P2W1 +8P2W2 +13P3W1 +8P3W2 +9P3W3 +14P4W2 +8P4W3 
++
+5W1R1 +6W1R2 +7W1R3 +10W1R4 +12W2R3 +8W2R4 +10W2R5 +14W2R6 +14W3R4 +12W3R5 +12W3R6 +6W3R7\\ 
+where \\
+each coefficient is the cost of that arc or edge of the graphic\\
+and a variable of the form PmWn would mean the arc connecting Plant m to Warehouse n.\\
+
+the contraints are:\\
+\begin{verbatim}
+        !SUPPLY CONTRAINTS
+        P1W1+P1W2<150
+        P2W1+P2W2<450
+        P3W1+P3W2+P3W3<250
+        P4W2+P4W3<150
+
+        !DEMAND CONSTRAINTS
+        W1R1>100
+        W1R2>150
+        W1R3+W2R3>100
+        W1R4+W2R4+W3R4>200
+        W2R5+W3R5>200
+        W2R6+W3R6>150
+        W3R7>100        
+
+        !DISTRIBUTION BALANCING CONTRAINTS
+        P1W1+P2W1+P3W1-W1R1-W1R2-W1R3-W1R4=0
+        P1W2+P2W2+P3W2+P4W2-W2R3-W2R4-W2R5-W2R6=0
+        P3W3+P4W3-W3R4-W3R5-W3R6-W3R7=0
+
+        !NON-NEGATIVITY CONTRAINTS
+        P1W1>0
+        P1W2>0
+        P2W1>0
+        P2W2>0
+        P3W1>0
+        P3W2>0
+        P3W3>0
+        P4W2>0
+        P4W3>0
+        W1R1>0
+        W1R2>0
+        W1R3>0
+        W1R4>0
+        W2R3>0
+        W2R4>0
+        W2R5>0
+        W2R6>0
+        W3R4>0
+        W3R5>0
+        W3R6>0
+        W3R7>0
+\end{verbatim}
+
+ii: this is the program and report for the optimal solution\\
+I've written out the optimal solution in (iii) below.\\
+
+This is the LINDO program:\\
+\begin{verbatim}
+ MIN    10P1W1  +15P1W2         +
+        11P2W1  +8P2W2          +
+        13P3W1  +8P3W2  +9P3W3  +
+                14P4W2  +8P4W3  +
+        
+        5W1R1   +6W1R2  +7W1R3  +10W1R4 +
+                        12W2R3  +8W2R4  +10W2R5 +14W2R6 +
+                                14W3R4  +12W3R5 +12W3R6 +6W3R7
+
+ST
+        !SUPPLY CONTRAINTS
+        P1W1+P1W2<150
+        P2W1+P2W2<450
+        P3W1+P3W2+P3W3<250
+        P4W2+P4W3<150
+
+        !DEMAND CONSTRAINTS
+        W1R1>100
+        W1R2>150
+        W1R3+W2R3>100
+        W1R4+W2R4+W3R4>200
+        W2R5+W3R5>200
+        W2R6+W3R6>150
+        W3R7>100        
+
+        !DISTRIBUTION BALANCING CONTRAINTS
+        P1W1+P2W1+P3W1-W1R1-W1R2-W1R3-W1R4=0
+        P1W2+P2W2+P3W2+P4W2-W2R3-W2R4-W2R5-W2R6=0
+        P3W3+P4W3-W3R4-W3R5-W3R6-W3R7=0
+
+        !NON-NEGATIVITY CONTRAINTS
+        P1W1>0
+        P1W2>0
+        P2W1>0
+        P2W2>0
+        P3W1>0
+        P3W2>0
+        P3W3>0
+        P4W2>0
+        P4W3>0
+        W1R1>0
+        W1R2>0
+        W1R3>0
+        W1R4>0
+        W2R3>0
+        W2R4>0
+        W2R5>0
+        W2R6>0
+        W3R4>0
+        W3R5>0
+        W3R6>0
+        W3R7>0
+
+END
+\end{verbatim}
+
+\\
+This is the LINDO report:\\
+\begin{verbatim}
+
+ LP OPTIMUM FOUND AT STEP     13
+
+        OBJECTIVE FUNCTION VALUE
+
+        1)      17100.00
+
+  VARIABLE        VALUE          REDUCED COST
+      P1W1       150.000000          0.000000
+      P1W2         0.000000          8.000000
+      P2W1       200.000000          0.000000
+      P2W2       250.000000          0.000000
+      P3W1         0.000000          2.000000
+      P3W2       150.000000          0.000000
+      P3W3       100.000000          0.000000
+      P4W2         0.000000          7.000000
+      P4W3       150.000000          0.000000
+      W1R1       100.000000          0.000000
+      W1R2       150.000000          0.000000
+      W1R3       100.000000          0.000000
+      W1R4         0.000000          5.000000
+      W2R3         0.000000          2.000000
+      W2R4       200.000000          0.000000
+      W2R5       200.000000          0.000000
+      W2R6         0.000000          1.000000
+      W3R4         0.000000          7.000000
+      W3R5         0.000000          3.000000
+      W3R6       150.000000          0.000000
+      W3R7       100.000000          0.000000
+
+
+       ROW   SLACK OR SURPLUS     DUAL PRICES
+        2)         0.000000          1.000000
+        3)         0.000000          0.000000
+        4)         0.000000          0.000000
+        5)         0.000000          1.000000
+        6)         0.000000        -16.000000
+        7)         0.000000        -17.000000
+        8)         0.000000        -18.000000
+        9)         0.000000        -16.000000
+       10)         0.000000        -18.000000
+       11)         0.000000        -21.000000
+       12)         0.000000        -15.000000
+       13)         0.000000        -11.000000
+       14)         0.000000         -8.000000
+       15)         0.000000         -9.000000
+       16)       150.000000          0.000000
+       17)         0.000000          0.000000
+       18)       200.000000          0.000000
+       19)       250.000000          0.000000
+       20)         0.000000          0.000000
+       21)       150.000000          0.000000
+       22)       100.000000          0.000000
+       23)         0.000000          0.000000
+       24)       150.000000          0.000000
+       25)       100.000000          0.000000
+       26)       150.000000          0.000000
+       27)       100.000000          0.000000
+       28)         0.000000          0.000000
+       29)         0.000000          0.000000
+       30)       200.000000          0.000000
+       31)       200.000000          0.000000
+       32)         0.000000          0.000000
+       33)         0.000000          0.000000
+       34)         0.000000          0.000000
+       35)       150.000000          0.000000
+       36)       100.000000          0.000000
+
+ NO. ITERATIONS=      13
+
+
+ RANGES IN WHICH THE BASIS IS UNCHANGED:
+
+                           OBJ COEFFICIENT RANGES
+ VARIABLE         CURRENT        ALLOWABLE        ALLOWABLE
+                   COEF          INCREASE         DECREASE
+     P1W1       10.000000         1.000000         INFINITY
+     P1W2       15.000000         INFINITY         8.000000
+     P2W1       11.000000         2.000000         1.000000
+     P2W2        8.000000         5.000000         0.000000
+     P3W1       13.000000         INFINITY         2.000000
+     P3W2        8.000000         0.000000         1.000000
+     P3W3        9.000000         1.000000         1.000000
+     P4W2       14.000000         INFINITY         7.000000
+     P4W3        8.000000         1.000000         INFINITY
+     W1R1        5.000000         INFINITY        16.000000
+     W1R2        6.000000         INFINITY        17.000000
+     W1R3        7.000000         2.000000        18.000000
+     W1R4       10.000000         INFINITY         5.000000
+     W2R3       12.000000         INFINITY         2.000000
+     W2R4        8.000000         5.000000        16.000000
+     W2R5       10.000000         3.000000        18.000000
+     W2R6       14.000000         INFINITY         1.000000
+     W3R4       14.000000         INFINITY         7.000000
+     W3R5       12.000000         INFINITY         3.000000
+     W3R6       12.000000         1.000000        21.000000
+     W3R7        6.000000         INFINITY        15.000000
+
+                           RIGHTHAND SIDE RANGES
+      ROW         CURRENT        ALLOWABLE        ALLOWABLE
+                    RHS          INCREASE         DECREASE
+        2      150.000000       200.000000         0.000000
+        3      450.000000         INFINITY         0.000000
+        4      250.000000       250.000000         0.000000
+        5      150.000000       100.000000         0.000000
+        6      100.000000         0.000000       100.000000
+        7      150.000000         0.000000       150.000000
+        8      100.000000         0.000000       100.000000
+        9      200.000000         0.000000       200.000000
+       10      200.000000         0.000000       200.000000
+       11      150.000000         0.000000       100.000000
+       12      100.000000         0.000000       100.000000
+       13        0.000000         0.000000       200.000000
+       14        0.000000         0.000000       250.000000
+       15        0.000000         0.000000       100.000000
+       16        0.000000       150.000000         INFINITY
+       17        0.000000         0.000000         INFINITY
+       18        0.000000       200.000000         INFINITY
+       19        0.000000       250.000000         INFINITY
+       20        0.000000         0.000000         INFINITY
+       21        0.000000       150.000000         INFINITY
+       22        0.000000       100.000000         INFINITY
+       23        0.000000         0.000000         INFINITY
+       24        0.000000       150.000000         INFINITY
+       25        0.000000       100.000000         INFINITY
+       26        0.000000       150.000000         INFINITY
+       27        0.000000       100.000000         INFINITY
+       28        0.000000         0.000000         INFINITY
+       29        0.000000         0.000000         INFINITY
+       30        0.000000       200.000000         INFINITY
+       31        0.000000       200.000000         INFINITY
+       32        0.000000         0.000000         INFINITY
+       33        0.000000         0.000000         INFINITY
+       34        0.000000         0.000000         INFINITY
+       35        0.000000       150.000000         INFINITY
+       36        0.000000       100.000000         INFINITY
+
+\end{verbatim}
+
+iii.  the optimal solution for shipping is\\
+ship 150 from P1 to W1\\
+ship 200 from P2 to W1\\
+ship 250 from P2 to W2\\
+ship 150 from P3 to W2\\
+ship 100 from P3 to W3\\
+ship 150 from P4 to W3\\
+ship 100 from W1 to R1\\
+ship 150 from W1 to R2\\
+ship 100 from W1 to R3\\
+ship 200 from W2 to R4\\
+ship 200 from W2 to R5\\
+ship 150 from W3 to R6\\
+ship 100 from W3 to R7\\
+for a total cost of 17,100\\
+\\
+
+\textbf{Part B)}\\
+Q1: there is no feasible solution for the problem (when eliminating Warehouse 2) without making adjustments.\\
+However if we are able to increase production at Plant 4 from 150 to 450, we have an optimal solution of 
+given in the following report with a cost of 18,400.  Alternatively, we could operate Plant 3 at 300 for a cost of 18,700.\\
+
+Report with Plant 4 operating at 450:\\
+\begin{verbatim}
+
+ LP OPTIMUM FOUND AT STEP      1
+
+        OBJECTIVE FUNCTION VALUE
+
+        1)      18400.00
+
+  VARIABLE        VALUE          REDUCED COST
+      P1W1       150.000000          0.000000
+      P2W1       400.000000          0.000000
+      P3W1         0.000000          2.000000
+      P3W3         0.000000          1.000000
+      P4W3       450.000000          0.000000
+      W1R1       100.000000          0.000000
+      W1R2       150.000000          0.000000
+      W1R3       100.000000          0.000000
+      W1R4       200.000000          0.000000
+      W3R4         0.000000          1.000000
+      W3R5       200.000000          0.000000
+      W3R6       150.000000          0.000000
+      W3R7       100.000000          0.000000
+
+
+       ROW   SLACK OR SURPLUS     DUAL PRICES
+        2)         0.000000          1.000000
+        3)        50.000000          0.000000
+        4)       250.000000          0.000000
+        5)       550.000000          0.000000
+        6)         0.000000        -16.000000
+        7)         0.000000        -17.000000
+        8)         0.000000        -18.000000
+        9)         0.000000        -21.000000
+       10)         0.000000        -20.000000
+       11)         0.000000        -20.000000
+       12)         0.000000        -14.000000
+       13)         0.000000        -11.000000
+       14)         0.000000         -8.000000
+       15)       150.000000          0.000000
+       16)       400.000000          0.000000
+       17)         0.000000          0.000000
+       18)         0.000000          0.000000
+       19)       450.000000          0.000000
+       20)       100.000000          0.000000
+       21)       150.000000          0.000000
+       22)       100.000000          0.000000
+       23)       200.000000          0.000000
+       24)         0.000000          0.000000
+       25)       200.000000          0.000000
+       26)       150.000000          0.000000
+       27)       100.000000          0.000000
+
+ NO. ITERATIONS=       1
+
+
+ RANGES IN WHICH THE BASIS IS UNCHANGED:
+
+                           OBJ COEFFICIENT RANGES
+ VARIABLE         CURRENT        ALLOWABLE        ALLOWABLE
+                   COEF          INCREASE         DECREASE
+     P1W1       10.000000         1.000000         INFINITY
+     P2W1       11.000000         1.000000         1.000000
+     P3W1       13.000000         INFINITY         2.000000
+     P3W3        9.000000         INFINITY         1.000000
+     P4W3        8.000000         1.000000         1.000000
+     W1R1        5.000000         INFINITY        16.000000
+     W1R2        6.000000         INFINITY        17.000000
+     W1R3        7.000000         INFINITY        18.000000
+     W1R4       10.000000         1.000000        21.000000
+     W3R4       14.000000         INFINITY         1.000000
+     W3R5       12.000000         INFINITY        20.000000
+     W3R6       12.000000         INFINITY        20.000000
+     W3R7        6.000000         INFINITY        14.000000
+
+                           RIGHTHAND SIDE RANGES
+      ROW         CURRENT        ALLOWABLE        ALLOWABLE
+                    RHS          INCREASE         DECREASE
+        2      150.000000       400.000000        50.000000
+        3      450.000000         INFINITY        50.000000
+        4      250.000000         INFINITY       250.000000
+        5     1000.000000         INFINITY       550.000000
+        6      100.000000        50.000000       100.000000
+        7      150.000000        50.000000       150.000000
+        8      100.000000        50.000000       100.000000
+        9      200.000000        50.000000       200.000000
+       10      200.000000       550.000000       200.000000
+       11      150.000000       550.000000       150.000000
+       12      100.000000       550.000000       100.000000
+       13        0.000000        50.000000       400.000000
+       14        0.000000       550.000000       450.000000
+       15        0.000000       150.000000         INFINITY
+       16        0.000000       400.000000         INFINITY
+       17        0.000000         0.000000         INFINITY
+       18        0.000000         0.000000         INFINITY
+       19        0.000000       450.000000         INFINITY
+       20        0.000000       100.000000         INFINITY
+       21        0.000000       150.000000         INFINITY
+       22        0.000000       100.000000         INFINITY
+       23        0.000000       200.000000         INFINITY
+       24        0.000000         0.000000         INFINITY
+       25        0.000000       200.000000         INFINITY
+       26        0.000000       150.000000         INFINITY
+       27        0.000000       100.000000         INFINITY
+\end{verbatim}
+
+
+This is the LINDO program:\\
+\begin{verbatim}
+MIN     10P1W1                  +
+        11P2W1                  +
+        13P3W1          +9P3W3  +
+                        8P4W3   +
+        
+        5W1R1   +6W1R2  +7W1R3  +10W1R4 +
+                                14W3R4  +12W3R5 +12W3R6 +6W3R7
+
+ST
+        !SUPPLY CONTRAINTS
+        P1W1<150
+        P2W1<450
+        P3W1+P3W3<250 !if increased from 250 to 300 we have a feasible solution
+        P4W3<150 !if increased from 150 to 450 we have a feasible solution
+
+        !DEMAND CONSTRAINTS
+        W1R1>100
+        W1R2>150
+        W1R3>100
+        W1R4+W3R4>200
+        W3R5>200   !lower demand from 200 to 150 for feasible solution
+        W3R6>150    !lower demand from 150 to 100 for feasible solution
+        W3R7>100    !lower demand from 100 to 50 for feasible solution  
+
+        !DISTRIBUTION BALANCING CONTRAINTS
+        P1W1+P2W1+P3W1-W1R1-W1R2-W1R3-W1R4=0
+        P3W3+P4W3-W3R4-W3R5-W3R6-W3R7=0
+
+        !NON-NEGATIVITY CONTRAINTS
+        P1W1>0
+        P2W1>0
+        P3W1>0
+        P3W3>0
+        P4W3>0
+        W1R1>0
+        W1R2>0
+        W1R3>0
+        W1R4>0
+        W3R4>0
+        W3R5>0
+        W3R6>0
+        W3R7>0
+
+END
+\end{verbatim}
+
+\\
+Q2: no there is not a feasible solution when Warehouse 2 is eliminated unless either demand or supply is adjusted.  This is because 
+supply from the heaviest producers, P2 and P3, but especially P2, had difficulty routing to demand at R5, R6, and R7 because of lack
+of routes eliminated by eliminating Warehouse 2.\\
+
+\textbf{Part C)}\\
+Yes, it is feasible with a cost of 18,300 as seen in the following report.\\
+The optimal solution, as seen in the report is:\\
+ship 150 from P1 to W1\\
+ship 350 from P2 to W1\\
+ship 100 from P2 to W2\\
+ship 250 from P3 to W3\\
+ship 150 from P4 to W3\\
+ship 100 from W1 to R1\\
+ship 150 from W1 to R2\\
+ship 100 from W1 to R3\\
+ship 150 from W1 to R4\\
+ship 50 from W2 to R4\\
+ship 50 from W2 to R5\\
+ship 150 from W3 to R5\\
+ship 150 from W3 to R6\\
+ship 100 from W3 to R7\\
+
+\begin{verbatim}
+ 
+ LP OPTIMUM FOUND AT STEP     15
+
+        OBJECTIVE FUNCTION VALUE
+
+        1)      18300.00
+
+  VARIABLE        VALUE          REDUCED COST
+      P1W1       150.000000          0.000000
+      P1W2         0.000000          8.000000
+      P2W1       350.000000          0.000000
+      P2W2       100.000000          0.000000
+      P3W1         0.000000          4.000000
+      P3W2         0.000000          2.000000
+      P3W3       250.000000          0.000000
+      P4W2         0.000000          9.000000
+      P4W3       150.000000          0.000000
+      W1R1       100.000000          0.000000
+      W1R2       150.000000          0.000000
+      W1R3       100.000000          0.000000
+      W1R4       150.000000          0.000000
+      W2R3         0.000000          7.000000
+      W2R4        50.000000          0.000000
+      W2R5        50.000000          0.000000
+      W2R6         0.000000          4.000000
+      W3R4         0.000000          4.000000
+      W3R5       150.000000          0.000000
+      W3R6       150.000000          0.000000
+      W3R7       100.000000          0.000000
+
+
+       ROW   SLACK OR SURPLUS     DUAL PRICES
+        2)         0.000000          1.000000
+        3)         0.000000          0.000000
+        4)         0.000000          2.000000
+        5)         0.000000          3.000000
+        6)         0.000000        -16.000000
+        7)         0.000000        -17.000000
+        8)         0.000000        -18.000000
+        9)         0.000000        -21.000000
+       10)         0.000000        -23.000000
+       11)         0.000000        -23.000000
+       12)         0.000000        -17.000000
+       13)         0.000000        -11.000000
+       14)         0.000000        -13.000000
+       15)         0.000000        -11.000000
+       16)         0.000000          5.000000
+       17)       150.000000          0.000000
+       18)         0.000000          0.000000
+       19)       350.000000          0.000000
+       20)       100.000000          0.000000
+       21)         0.000000          0.000000
+       22)         0.000000          0.000000
+       23)       250.000000          0.000000
+       24)         0.000000          0.000000
+       25)       150.000000          0.000000
+       26)       100.000000          0.000000
+       27)       150.000000          0.000000
+       28)       100.000000          0.000000
+       29)       150.000000          0.000000
+       30)         0.000000          0.000000
+       31)        50.000000          0.000000
+       32)        50.000000          0.000000
+       33)         0.000000          0.000000
+       34)         0.000000          0.000000
+       35)       150.000000          0.000000
+       36)       150.000000          0.000000
+       37)       100.000000          0.000000
+
+ NO. ITERATIONS=      15
+
+
+ RANGES IN WHICH THE BASIS IS UNCHANGED:
+
+                           OBJ COEFFICIENT RANGES
+ VARIABLE         CURRENT        ALLOWABLE        ALLOWABLE
+                   COEF          INCREASE         DECREASE
+     P1W1       10.000000         1.000000         INFINITY
+     P1W2       15.000000         INFINITY         8.000000
+     P2W1       11.000000         INFINITY         1.000000
+     P2W2        8.000000         2.000000         INFINITY
+     P3W1       13.000000         INFINITY         4.000000
+     P3W2        8.000000         INFINITY         2.000000
+     P3W3        9.000000         2.000000         INFINITY
+     P4W2       14.000000         INFINITY         9.000000
+     P4W3        8.000000         3.000000         INFINITY
+     W1R1        5.000000         INFINITY        16.000000
+     W1R2        6.000000         INFINITY        17.000000
+     W1R3        7.000000         7.000000        18.000000
+     W1R4       10.000000         INFINITY         2.000000
+     W2R3       12.000000         INFINITY         7.000000
+     W2R4        8.000000         2.000000         INFINITY
+     W2R5       10.000000         4.000000         2.000000
+     W2R6       14.000000         INFINITY         4.000000
+     W3R4       14.000000         INFINITY         4.000000
+     W3R5       12.000000         2.000000         4.000000
+     W3R6       12.000000         4.000000        23.000000
+     W3R7        6.000000         INFINITY        17.000000
+
+                           RIGHTHAND SIDE RANGES
+      ROW         CURRENT        ALLOWABLE        ALLOWABLE
+                    RHS          INCREASE         DECREASE
+        2      150.000000       350.000000         0.000000
+        3      450.000000         INFINITY         0.000000
+        4      250.000000        50.000000         0.000000
+        5      150.000000        50.000000         0.000000
+        6      100.000000         0.000000       100.000000
+        7      150.000000         0.000000       150.000000
+        8      100.000000         0.000000       100.000000
+        9      200.000000         0.000000       150.000000
+       10      200.000000         0.000000        50.000000
+       11      150.000000         0.000000        50.000000
+       12      100.000000         0.000000        50.000000
+       13        0.000000         0.000000       350.000000
+       14        0.000000         0.000000       150.000000
+       15        0.000000         0.000000        50.000000
+       16      100.000000       150.000000        50.000000
+       17        0.000000       150.000000         INFINITY
+       18        0.000000         0.000000         INFINITY
+       19        0.000000       350.000000         INFINITY
+       20        0.000000       100.000000         INFINITY
+       21        0.000000         0.000000         INFINITY
+       22        0.000000         0.000000         INFINITY
+       23        0.000000       250.000000         INFINITY
+       24        0.000000         0.000000         INFINITY
+       25        0.000000       150.000000         INFINITY
+       26        0.000000       100.000000         INFINITY
+       27        0.000000       150.000000         INFINITY
+       28        0.000000       100.000000         INFINITY
+       29        0.000000       150.000000         INFINITY
+       30        0.000000         0.000000         INFINITY
+       31        0.000000        50.000000         INFINITY
+       32        0.000000        50.000000         INFINITY
+       33        0.000000         0.000000         INFINITY
+       34        0.000000         0.000000         INFINITY
+       35        0.000000       150.000000         INFINITY
+       36        0.000000       150.000000         INFINITY
+       37        0.000000       100.000000         INFINITY
+
+\end{verbatim}
+
+
+This is the LINDO program:\\
+\begin{verbatim}
+ MIN    10P1W1  +15P1W2         +
+        11P2W1  +8P2W2          +
+        13P3W1  +8P3W2  +9P3W3  +
+                14P4W2  +8P4W3  +
+        
+        5W1R1   +6W1R2  +7W1R3  +10W1R4 +
+                        12W2R3  +8W2R4  +10W2R5 +14W2R6 +
+                                14W3R4  +12W3R5 +12W3R6 +6W3R7
+
+ST
+        !SUPPLY CONTRAINTS
+        P1W1+P1W2<150
+        P2W1+P2W2<450
+        P3W1+P3W2+P3W3<250
+        P4W2+P4W3<150
+
+        !DEMAND CONSTRAINTS
+        W1R1>100
+        W1R2>150
+        W1R3+W2R3>100
+        W1R4+W2R4+W3R4>200
+        W2R5+W3R5>200
+        W2R6+W3R6>150
+        W3R7>100        
+
+        !DISTRIBUTION BALANCING CONTRAINTS
+        P1W1+P2W1+P3W1-W1R1-W1R2-W1R3-W1R4=0
+        P1W2+P2W2+P3W2+P4W2-W2R3-W2R4-W2R5-W2R6=0
+        P3W3+P4W3-W3R4-W3R5-W3R6-W3R7=0
+
+        !LIMIT WAREHOUSE 2
+        P1W2+P2W2+P3W2+P4W2<100
+
+        !NON-NEGATIVITY CONTRAINTS
+        P1W1>0
+        P1W2>0
+        P2W1>0
+        P2W2>0
+        P3W1>0
+        P3W2>0
+        P3W3>0
+        P4W2>0
+        P4W3>0
+        W1R1>0
+        W1R2>0
+        W1R3>0
+        W1R4>0
+        W2R3>0
+        W2R4>0
+        W2R5>0
+        W2R6>0
+        W3R4>0
+        W3R5>0
+        W3R6>0
+        W3R7>0
+
+END6
+\end{verbatim}
+
+\textbf{Part D)}\\
+This is the generalized solution.\\
+For the objective function we must have $\sum\limits_{u,v\epsilon E} a(u,v)f_{u,v}$ where (u,v) is an edge in the set
+of edges, and $a(u,v)f_{u,v}$ is the cost for the edge.\\
+\\
+We must also have the following constraints:\\ 
+\\
+Supply constraints needed are each an edge in the graph from supply vertices to warehouse vertices.  Let us denote supply vertices as
+u and warehouse vertices as w and the graph (half of the graph E) as S and with $s_u$ being the supply amount associated with source u.\\
+Then we have $(\sum\limits_{u,w\epsilon S} f_{u,w})<s_u$ for each $u \epsilon S$
+
+\\
+Demand constraints needed are each an edge in the graph from warehouse vertices to demand vertices.  Let us denote warehouse vertices as
+warehouse vertices as w and demand vertices as v and the graph (half of the graph E) as D and with $d_v$ being the demand amount associated with retailer v.\\
+Then we have $(\sum\limits_{w,v\epsilon D} f_{w,v})>d_v$ for each $v \epsilon D$
+
+\\
+Non-negative supply constraints needed are of the form $f_{u,w}>0$ for each $u,w \epsilon S$.\\
+Also we need non-negative demand constraints of the form  $f_{w,v}>0$ for each $w,v \epsilon D$.\\
+
+\\Distrbution flow constraints:  we need to insure that distribution flows through the warehouses are balanced--that inflows 
+match outflows.  Therefore we need constraints
+of the form $(\sum\limits_{u,w\epsilon S} f_{u,w}) - (\sum\limits_{w,v\epsilon D} f_{w,v}) = 0$ for each $u \epsilon S$, 
+$v \epsilon D$ which is connecting through $w \epsilon E$
+
+\end{document}
