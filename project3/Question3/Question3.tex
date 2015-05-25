@@ -96,7 +96,7 @@ Following the same procedures as in Part A, set the equation equal to z and try 
 It is important to note that these are opposite of the solutions as found in part A.
 
 \subsection{ii: Use the linear program to find the MMAD regression line for the data set $(x,y) = { (1,5), (1, 3), (2, 13), ( 3, 8), (4,10), ( 5, 14), (6, 18) }$ What was the min of the max absolute deviations?}
-Minimize z subject to $ z \geq max_{i} \abs{y_{i} - (a_{1}x_{i} + a_{0})}$
+Minimize z subject to $ z \geq max_{i}\ |{y_{i} - (a_{1}x_{i} + a_{0})|}$
 
 
 
@@ -111,6 +111,8 @@ Multiple Linear Regression. Generalize the simple linear regression model to all
 \begin{table}[ht]\centering\begin{tabular}{| c | c | c |}\hline$x_{1}$ & $x_{2}$ & y \\ [0.5ex] % inserts table %heading\hline1 & 1 & 5 \\1 & 2 & 9  \\2 & 2 & 12 \\0 & 1 & 3  \\0 & 0 & 0  \\
 1 & 3 & 11 \\ [1ex]\hline\end{tabular}\end{table}
 
-
+Solving for $a_{0}$, $a_{1}$, and $a_{2}$ using a system of equations and the values in the table above. Using the above values, $a_{0}$ must be 0. It is the only way $x_{1}$ and $x_{2}$ could be zero if y is 0. The result is that $a_{2}$ equals 3. The final value, $a_{1}$, is 2 or 3 depending on the data points you use to calculate them.  Using LAD, we minimize the values. making $a_{1} = 2$.
+\\
+The final estimation is $y = 3\times x_{2} + 2\times x_{1}$.
 
 \end{document}  
