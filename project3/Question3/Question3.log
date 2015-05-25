@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012) (format=pdflatex 2012.6.30)  25 MAY 2015 14:16
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012) (format=pdflatex 2012.6.30)  25 MAY 2015 16:10
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -519,18 +519,18 @@ LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 (./Question3.aux)
 \openout1 = `Question3.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 17.
-LaTeX Font Info:    ... okay on input line 17.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 17.
-LaTeX Font Info:    ... okay on input line 17.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 17.
-LaTeX Font Info:    ... okay on input line 17.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 17.
-LaTeX Font Info:    ... okay on input line 17.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 17.
-LaTeX Font Info:    ... okay on input line 17.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 17.
-LaTeX Font Info:    ... okay on input line 17.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -624,42 +624,48 @@ G,.JBIG2,.JB2,.eps]
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-LaTeX Font Info:    Try loading font information for U+msa on input line 18.
+LaTeX Font Info:    Try loading font information for U+msa on input line 19.
 
 (/usr/local/texlive/2012/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2009/06/22 v3.00 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 18.
+LaTeX Font Info:    Try loading font information for U+msb on input line 19.
 
 (/usr/local/texlive/2012/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2009/06/22 v3.00 AMS symbols B
 ) [1
 
-{/usr/local/texlive/2012/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] [2] (./
-Question3.aux) ) 
-Here is how much of TeX's memory you used:
- 17364 strings out of 493488
- 412742 string characters out of 3141326
- 512534 words of memory out of 3000000
- 20320 multiletter control sequences out of 15000+200000
- 11044 words of font info for 42 fonts, out of 3000000 for 9000
- 957 hyphenation exceptions out of 8191
- 63i,8n,74p,657b,609s stack positions out of 5000i,500n,10000p,200000b,50000s
-</usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts
-/cm/cmbx12.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/
-cm/cmex10.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/c
-m/cmmi10.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm
-/cmmi12.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/
-cmmi8.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cm
-r10.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmr1
-2.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.
-pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb
-></usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
+{/usr/local/texlive/2012/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] (./Ques
+tion3.toc)
+\tf@toc=\write4
+\openout4 = `Question3.toc'.
 
-Output written on Question3.pdf (2 pages, 107485 bytes).
+
+[2] [3] [4] [5] (./Question3.aux) ) 
+Here is how much of TeX's memory you used:
+ 17368 strings out of 493488
+ 412794 string characters out of 3141326
+ 512534 words of memory out of 3000000
+ 20321 multiletter control sequences out of 15000+200000
+ 11352 words of font info for 43 fonts, out of 3000000 for 9000
+ 957 hyphenation exceptions out of 8191
+ 63i,11n,74p,657b,609s stack positions out of 5000i,500n,10000p,200000b,50000s
+</usr/local/texlive/2012/texmf-dist/fonts/ty
+pe1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2012/texmf-dist/fonts/typ
+e1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2012/texmf-dist/fonts/type
+1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1
+/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/
+public/amsfonts/cm/cmmi12.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/p
+ublic/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/pub
+lic/amsfonts/cm/cmr10.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/publi
+c/amsfonts/cm/cmr12.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/public/
+amsfonts/cm/cmr17.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/public/am
+sfonts/cm/cmr8.pfb></usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfo
+nts/cm/cmsy10.pfb>
+Output written on Question3.pdf (5 pages, 126168 bytes).
 PDF statistics:
- 54 PDF objects out of 1000 (max. 8388607)
- 39 compressed objects within 1 object stream
+ 67 PDF objects out of 1000 (max. 8388607)
+ 48 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
  13 words of extra memory for PDF output out of 10000 (max. 10000000)
 
