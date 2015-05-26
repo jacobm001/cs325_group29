@@ -4,13 +4,19 @@
 \usepackage{wrapfig}
 \usepackage{graphicx}
 \usepackage{listings}
+<<<<<<< HEAD
 \usepackage{pgfplots} 
 \usepackage{pgfplotstable}
 \pgfplotsset{compat=1.5}
+=======
+\usepackage[table]{xcolor}
+>>>>>>> origin/master
 
 \title{Project 3}
 \author{Cera Olson\\Jacob Mastel\\Robert Erick}
 \date{\today}
+
+\newcommand{\e}[1]{\ensuremath{\times 10^{#1}}}
 
 \lstset{
 	tabsize=4
@@ -19,14 +25,9 @@
 \pagenumbering{gobble}
 	
 \begin{document}
-	\maketitle
-\newpage
-\tableofcontents
-\newpage
-	% \input will insert a .tex document exactly as is
-	% if preferred, these can be switched to \include which will put 
-	% them on a new page
+	\maketitle\textbf{Total Calories:} \$ \\
+\textbf{Total Cost:} \$
 	\input{q1.tex}
 	\input{q2.tex}
-	\input{q3.tex}
+	%\input{q3.tex}
 \end{document}
