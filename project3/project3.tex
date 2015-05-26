@@ -4,17 +4,14 @@
 \usepackage{wrapfig}
 \usepackage{graphicx}
 \usepackage{listings}
-<<<<<<< HEAD
+\usepackage[table]{xcolor}
 \usepackage{pgfplots} 
 \usepackage{pgfplotstable}
-\pgfplotsset{compat=1.5}
-=======
-\usepackage[table]{xcolor}
->>>>>>> origin/master
 
 \title{Project 3}
 \author{Cera Olson\\Jacob Mastel\\Robert Erick}
 \date{\today}
+\pgfplotsset{compat=1.12}
 
 \newcommand{\e}[1]{\ensuremath{\times 10^{#1}}}
 
@@ -25,9 +22,8 @@
 \pagenumbering{gobble}
 	
 \begin{document}
-	\maketitle\textbf{Total Calories:} \$ \\
-\textbf{Total Cost:} \$
+	\maketitle
 	\input{q1.tex}
 	\input{q2.tex}
-	%\input{q3.tex}
+	\input{q3.tex}
 \end{document}
