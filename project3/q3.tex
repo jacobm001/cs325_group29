@@ -1,21 +1,4 @@
 
-\documentclass[11pt, oneside]{article}   	% use "amsart" instead of "article" for AMSLaTeX format
-\usepackage{geometry} 
-\usepackage{pgfplots} 
-\usepackage{pgfplotstable}
-\pgfplotsset{compat=1.5}               		% See geometry.pdf to learn the layout options. There are lots.
-\geometry{letterpaper}                   		% ... or a4paper or a5paper or ... 
-%\geometry{landscape}                		% Activate for for rotated page geometry
-%\usepackage[parfill]{parskip}    		% Activate to begin paragraphs with an empty line rather than an indent
-\usepackage{graphicx}				% Use pdf, png, jpg, or eps§ with pdflatex; use eps in DVI mode
-								% TeX will automatically convert eps --> pdf in pdflatex		
-\usepackage{amssymb}
-
-						% Activate to display a given date or no date
-
-\section*{Question 3}
-
-
 \section{Part A}
 One alternative to the least squares line is the Least Absolute Deviations (LAD). Formulate a linear program whose optimal solution minimizes the sum of the absolute deviations of the data from the line. That is formulate 
 \begin{center} $ min  \sum_{i=1}^{n} |y_{i} - (a_{1}x_{i} + a_{0})|$ \end{center} 
@@ -34,9 +17,24 @@ What was the sum of absolute deviations?}
 
 The absolute deviation is calculated by taking the least squares values for y and finding the difference between that and the calculated actual value of y using the data. See the chart below. The trendline has an equation of $y = 2.315x + 2.875$
 
-\begin{table}[ht]\caption{Part A (ii)}\centering\begin{tabular}{c | c | c | c | c}\hline\hlinex & y: Data Points & Trendline & Differences & Squared \\ [0.5ex] % inserts table %heading\hline1 & 5 & 3.93 & 1.07 & 1.15 \\1 & 3 & 3.93 & 0.93 & 0.87 \\2 & 13 & 5.99 & 7.01 & 49\\3 & 8 & 8.07 & 0.07 & 0.01 \\4 & 10 & 10.14 & 0.14 & 0.02 \\
+\begin{table}[ht]
+\caption{Part A (ii)}
+\centering
+\begin{tabular}{c | c | c | c | c}
+\hline\hline
+x & y: Data Points & Trendline & Differences & Squared \\ [0.5ex] % inserts table %heading
+\hline
+1 & 5 & 3.93 & 1.07 & 1.15 \\
+1 & 3 & 3.93 & 0.93 & 0.87 \\
+2 & 13 & 5.99 & 7.01 & 49\\
+3 & 8 & 8.07 & 0.07 & 0.01 \\
+4 & 10 & 10.14 & 0.14 & 0.02 \\
 5 & 14 & 12.21 & 1.79 & 3.2 \\
-6 & 18 & 14.29 & 3.72 & 13.84 \\ [1ex]\hline\end{tabular}\label{table:nonlin}\end{table}
+6 & 18 & 14.29 & 3.72 & 13.84 \\ [1ex]
+\hline
+\end{tabular}
+\label{table:nonlin}
+\end{table}
 
 Based on the chart above, the sum of the absolute deviations is 14.73.
 
@@ -49,7 +47,6 @@ The value for point 2 appears to be an outlier. The value of the data point at x
    \caption{example caption}
    \label{fig:example}
 \end{figure}
-
 %\begin{tikzpicture}
 %\begin{axis}[
 %    title={Part A ii},
@@ -74,7 +71,9 @@ The value for point 2 appears to be an outlier. The value of the data point at x
 %        5 14
 %        6 18 };
 %    \addlegendentry{True Data}
-%    \addplot table[%        y={create col/linear regression={y=Y}}] % compute a linear regression from the input table%    {
+%    \addplot table[
+%        y={create col/linear regression={y=Y}}] % compute a linear regression from the input table
+%    {
 %        X Y
 %        1 5
 %        1 3
@@ -83,13 +82,17 @@ The value for point 2 appears to be an outlier. The value of the data point at x
 %        4 10
 %        5 14
 %        6 18};
-%    \addlegendentry{%%        $\pgfmathprintnumber{\pgfplotstableregressiona} \cdot x%        \pgfmathprintnumber[print sign]{\pgfplotstableregressionb}$};
+%    \addlegendentry{%
+%        $\pgfmathprintnumber{\pgfplotstableregressiona} \cdot x
+%        \pgfmathprintnumber[print sign]{\pgfplotstableregressionb}$};
 %
 %\end{axis}
 %\end{tikzpicture}
 
 \section{Part B}
-Another alternative to the least squares method is to find a line that minimizes of the maximum absolute deviation (MMAD). That is formulate\begin{center} $min\  max_{i}\  | y_{i}  - (a_{1}x_{i} + a_{0}) |$ \end{center}as an LP.
+Another alternative to the least squares method is to find a line that minimizes of the maximum absolute deviation (MMAD). That is formulate
+\begin{center} $min\  max_{i}\  | y_{i}  - (a_{1}x_{i} + a_{0}) |$ \end{center}
+as an LP.
 
 \subsection{i: Write the linear program for the general problem written as an objective and set of constraints}
 Following the same procedures as in Part A, set the equation equal to z and try to minimize z for all values $i = 1, ... , n$. The resulting equations are:
@@ -105,16 +108,31 @@ Minimize z subject to $ z \geq max_{i}\ |{y_{i} - (a_{1}x_{i} + a_{0})|}$
 \subsection{iii: Plot the points and graph the MMAD line and the least squares line. Compare.}
 
 
-\subsection{iv: Can you create a data set for which all three methods of regression (least squares, LAD, MMAD)compute the same line.}
+\subsection{iv: Can you create a data set for which all three methods of regression (least squares, LAD, MMAD)
+compute the same line.}
+The only set that could have the same result is the empty set or a set of zero values. All three methods use different methodologies to calculate the line of best fit. They all use either minimization, maximization, or a combination there of, and as such, there will be minute differences between the calculations of the regression. 
 
 
 \section{Part C}
-Multiple Linear Regression. Generalize the simple linear regression model to allow for two independent variables ($x_{1}$ and $x_{2}$).$?? = ??_{2} ??_{2} + ??_{1} ??_{1} + ??_{0}$ ,The model is called multiple linear not because the result is a line but because all variables are 1st degree. Extend the techniques from Part A to find the least absolute deviations regression equation. Use linear programming to fit a LAD multiple linear regression model to the data set below:
-\begin{table}[ht]\centering\begin{tabular}{| c | c | c |}\hline$x_{1}$ & $x_{2}$ & y \\ [0.5ex] % inserts table %heading\hline1 & 1 & 5 \\1 & 2 & 9  \\2 & 2 & 12 \\0 & 1 & 3  \\0 & 0 & 0  \\
-1 & 3 & 11 \\ [1ex]\hline\end{tabular}\end{table}
+Multiple Linear Regression. Generalize the simple linear regression model to allow for two independent variables ($x_{1}$ and $x_{2}$).
+$?? = ??_{2} ??_{2} + ??_{1} ??_{1} + ??_{0}$ ,
+The model is called multiple linear not because the result is a line but because all variables are 1st degree. Extend the techniques from Part A to find the least absolute deviations regression equation. Use linear programming to fit a LAD multiple linear regression model to the data set below:
+\begin{table}[ht]
+\centering
+\begin{tabular}{| c | c | c |}
+\hline
+$x_{1}$ & $x_{2}$ & y \\ [0.5ex] % inserts table %heading
+\hline
+1 & 1 & 5 \\
+1 & 2 & 9  \\
+2 & 2 & 12 \\
+0 & 1 & 3  \\
+0 & 0 & 0  \\
+1 & 3 & 11 \\ [1ex]
+\hline
+\end{tabular}
+\end{table}
 
 Solving for $a_{0}$, $a_{1}$, and $a_{2}$ using a system of equations and the values in the table above. Using the above values, $a_{0}$ must be 0. It is the only way $x_{1}$ and $x_{2}$ could be zero if y is 0. The result is that $a_{2}$ equals 3. The final value, $a_{1}$, is 2 or 3 depending on the data points you use to calculate them.  Using LAD, we minimize the values. making $a_{1} = 2$.
 \\
 The final estimation is $y = 3\times x_{2} + 2\times x_{1}$.
-
-\end{document}  
