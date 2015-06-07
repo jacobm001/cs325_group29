@@ -21,14 +21,24 @@
 \indent The algorithm used by our group to solve this problem was Prim's Algorithm. Prim's Algorithm is a greedy algorithm that finds the shortest distance between a list of nodes on an undirected, weighted graph. The is a common and effective algorithm used to solve the Traveling Salesman Problem (TSP). See Appendix 1 for the actual code we used to find our results. \\
 \indent Our Algorithm is programmed in Python. We started by defining 2 global functions: aCity and getCities. aCity takes list of strings and converts them to integers, the cost of movement to the city. getCities takes the values returned in aCity and creates a list of these items. getCities is used in the different classes to find the neighboring cities and to determine the cost to their connections.\\
 \indent We used three separate classes to separate out the different sections of the problem - the node, the minimum spanning tree, and the traveling salesman problem itself.  
+
 \subsection{Node Class}
-\indent The node class represents a single city. This class contains multiple functions that define the individual values of each node in a tree - distance, cost, neighbors, and location in the spanning tree. This class is what actually creates each node used in the minimum spanning tree. \\
+\indent The node class represents a single city. This class contains multiple functions that define the individual values of each node in a tree - distance, cost, neighbors, and location in the spanning tree. This class is what actually creates each node used in the minimum spanning tree. Node initates by first creating an id number, an x coordinate and a y coordinate and then adding them to a list. These values are later used in the MST Class.
+
 \begin{itemize}
 \item distance: Uses the equation $d = \sqrt(x^2 + y^2)$ to find the distance between this node and its neighbors. We chose to have the function return a round numbers, to the closest integer. This eases the calculations and any nodes that have a difference in distance less than 1, that difference is considered arbitrary in the overall problem. 
-\item minEdge: Using the previously described distance function, the minEdge function creates a chart of edge weights, determining the minEdge between the current node and its neighbors. If the nodes not connected to the "self" node are within the set maximum distance (MAX_CACHE_DIST), it is added to the tables and lists the shortest distances between the cataloged nodes. 
+\item minEdge: Using the previously described distance function, the minEdge function creates a chart of edge weights, determining the minEdge between the current node and its neighbors. If the nodes not connected to the "self" node are within the set maximum distance (MAX\_CACHE\_DIST), it is added to the tables and lists the shortest distances between the cataloged nodes. 
 \item preorder: Takes in a node and outputs a list of children that is then used in the TSP class. Because preorder uses extend(), each time a node is found or processed, they are added to the list.
+\item printTree: A pretty straight forward function that prints out the resulting tree. 
 \end{itemize}
+
 \subsection{MST Class}
+\indent MST is the class that is run in order to create the Minimum Spanning Tree. The output of this class is the input for the next class, TSP. MST is initiated with a node and a list of lists. Each sublist contains an id number, an x coordinate, and a y coordinate. These are the values put through the distance function in Node. The node class is called in the getMST function. 
+
+\begin{itemize}
+\item
+\end{itemize}
+
 \subsection{TSP Class}	
 \section{The Tours}
 \subsection{Tour 1}
@@ -38,12 +48,8 @@
 \newpage
 \section{Appendix}
 \subsection{Appendix 1: Code}
-\lstinputlisting{project4g_robert.py}
-\newpage
-\subsection{Appendix 2: Resources Used}
-\begin{itemize}
-\item Prim's Algorithm Description from "Introductions to Algorithm" by Corman, et al. 
-\end{itemize}
+\lstinputlisting{project4g_robert.py}H
+
 
 
 
