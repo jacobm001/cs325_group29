@@ -1,8 +1,6 @@
 # main.py
 
-import math, os, sys
-
-import time
+import math, os, sys, time
 
 #controls the search
 MAX_COMPARE=20
@@ -195,10 +193,13 @@ if __name__ == "__main__":
 
 	# main process
 	cities = getCities(sys.argv[1])
+	start = time.time()
 	atsp = tsp(cities)
+	end = time.time()
 	p=atsp.presentation
 
 	# write results
 	f.writelines(atsp.fileLines())
-	
 	f.close()
+
+	print 'Total time: {0}'.format(end-start)
