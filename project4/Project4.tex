@@ -27,17 +27,17 @@
 
 \begin{itemize}
 \item distance: Uses the equation $d = \sqrt(x^2 + y^2)$ to find the distance between this node and its neighbors. We chose to have the function return a round numbers, to the closest integer. This eases the calculations and any nodes that have a difference in distance less than 1, that difference is considered arbitrary in the overall problem. 
-\item minEdge: Using the previously described distance function, the minEdge function creates a chart of edge weights, determining the minEdge between the current node and its neighbors. If the nodes not connected to the "self" node are within the set maximum distance (MAX\_CACHE\_DIST), it is added to the tables and lists the shortest distances between the cataloged nodes. 
-\item preorder: Takes in a node and outputs a list of children that is then used in the TSP class. Because preorder uses extend(), each time a node is found or processed, they are added to the list.
+\item minEdge: Using the previously described distance function, the minEdge function creates a chart of edge weights, determining the minEdge between the current node and its neighbors. If the nodes not connected to the "self" node are within the set maximum distance (MAX\_CACHE\_DIST), it is added to the tables and lists the shortest distances between the cataloged nodes. A node only checks MAX_COMPARE nodes to locate a minimum edge to submit for decision for the MST class
+\item preorder: This is a recursive call on the children from left to right in the order added. Takes in a node and outputs a list of children that is then used in the TSP class. Because preorder uses extend(), each time a node is found or processed, they are added to the list.
 \item printTree: A pretty straight forward function that prints out the resulting tree. 
 \end{itemize}
 
 \subsection{MST Class}
-\indent MST is the class that is run in order to create the Minimum Spanning Tree. The output of this class is the input for the next class, TSP. MST is initiated with a node and a list of lists. Each sublist contains an id number, an x coordinate, and a y coordinate. These are the values put through the distance function in Node. The node class is called in the getMST function. 
+\indent MST is the class that is run in order to create the Minimum Spanning Tree. The output of this class is the input for the next class, TSP. MST is initiated with a node and a list of lists. The list of notConnected nodes is created by initializes a node object with a list of node number, x coordinate, y coordinate, and also a reference a memo. The nodes can then share the memo function instead of recomputing every distance. These are the values put through the distance function in Node. The node class is called in the getMST function. 
 
 \begin{itemize}
 \item getMST: This function is what creates the minimum spanning tree off which the TSP solutions are based. It begins by sorting the nodes and then popping off the first value in the list. From there is systematically goes through the list of nodes, finds the minimum distances, and adds them to the list. By using a while loop based on nodes that aren't yet connected, it prevents nodes from being processed more than once.
-\item extractMin: This is directly from Prim's Algorithm. This function is called in getMST and finds the shortest path between the nodes. Starting with an initial input node, to compares all the connected nodes, removes the unconnected nodes, and adds them to a list unique to the parent node. 
+\item extractMin: This is directly from Prim's Algorithm. This function is called in getMST and finds the shortest path between the nodes. Starting with an initial input node, to compares all the connected nodes, removes the unconnected nodes, and adds them to a list unique to the parent node. Only the last MAX\_SEARCH\_LATEST nodes which have been connected into the graph are checked to be connections to newer, notConnected nodes.
 \end{itemize}
 
 \subsection{TSP Class}	
@@ -62,7 +62,7 @@
 \subsection{Tour 3}
 \indent Tour 3 has an optimal route of 1,573,084. Our algorithm route has a length of 4,105,325. Our route is 161\% longer than the optimal route. 
 
-\subsection{Competition Tours}
+\subsection{Competition Tour}
 
 \newpage
 \section{Appendix}
