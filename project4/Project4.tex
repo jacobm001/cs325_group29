@@ -36,10 +36,18 @@
 \indent MST is the class that is run in order to create the Minimum Spanning Tree. The output of this class is the input for the next class, TSP. MST is initiated with a node and a list of lists. Each sublist contains an id number, an x coordinate, and a y coordinate. These are the values put through the distance function in Node. The node class is called in the getMST function. 
 
 \begin{itemize}
-\item
+\item getMST: This function is what creates the minimum spanning tree off which the TSP solutions are based. It begins by sorting the nodes and then popping off the first value in the list. From there is systematically goes through the list of nodes, finds the minimum distances, and adds them to the list. By using a while loop based on nodes that aren't yet connected, it prevents nodes from being processed more than once.
+\item extractMin: This is directly from Prim's Algorithm. This function is called in getMST and finds the shortest path between the nodes. Starting with an initial input node, to compares all the connected nodes, removes the unconnected nodes, and adds them to a list unique to the parent node. 
 \end{itemize}
 
 \subsection{TSP Class}	
+\indent The TSP class takes the final output from the MST, the minimum spanning tree created from a list of nodes, and determine a route to connect all the nodes and the shortest route of the available options. The class is initiated by taking the spanning tree created by the MST class. Using the origin node and the last of connections, it initiates the MST class and creates a preorder array, a total variable and a presentation array. These are used in the functions within the class to determine the best route for the problem.
+\begin{itemize}
+\item getPreorder: Using the Node preorder function, to get all the neighboring nodes, adding them to the array.
+\item getTotal: Starting at the initial input node, getTotal goes through the list and finds the shortest route to travel to all the nodes. This will later be compared to all the totals to find the shortest path. This function is operational but is written in a manner that it returns a working total but does not find other options. This means that our results may not be the best option available. 
+\item getPresentation: This function takes the totals and adds them to the preorder array, listing all the data in one place.
+\item fileLines: This function strictly prints out all the results in a file. 
+\end{itemize}
 \section{The Tours}
 \subsection{Tour 1}
 \subsection{Tour 2}
@@ -48,7 +56,7 @@
 \newpage
 \section{Appendix}
 \subsection{Appendix 1: Code}
-\lstinputlisting{project4g_robert.py}H
+\lstinputlisting[breaklines = true]{main.py}
 
 
 
