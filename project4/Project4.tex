@@ -27,7 +27,7 @@
 
 \begin{itemize}
 \item distance: Uses the equation $d = \sqrt(x^2 + y^2)$ to find the distance between this node and its neighbors. We chose to have the function return a round numbers, to the closest integer. This eases the calculations and any nodes that have a difference in distance less than 1, that difference is considered arbitrary in the overall problem. 
-\item minEdge: Using the previously described distance function, the minEdge function creates a chart of edge weights, determining the minEdge between the current node and its neighbors. If the nodes not connected to the "self" node are within the set maximum distance (MAX\_CACHE\_DIST), it is added to the tables and lists the shortest distances between the cataloged nodes. A node only checks MAX_COMPARE nodes to locate a minimum edge to submit for decision for the MST class
+\item minEdge: Using the previously described distance function, the minEdge function creates a chart of edge weights, determining the minEdge between the current node and its neighbors. If the nodes not connected to the "self" node are within the set maximum distance (MAX\_CACHE\_DIST), it is added to the tables and lists the shortest distances between the cataloged nodes. A node only checks MAX\_COMPARE nodes to locate a minimum edge to submit for decision for the MST class
 \item preorder: This is a recursive call on the children from left to right in the order added. Takes in a node and outputs a list of children that is then used in the TSP class. Because preorder uses extend(), each time a node is found or processed, they are added to the list.
 \item printTree: A pretty straight forward function that prints out the resulting tree. 
 \end{itemize}
