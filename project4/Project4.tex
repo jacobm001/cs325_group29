@@ -42,21 +42,41 @@
 
 \subsection{TSP Class}	
 \indent The TSP class takes the final output from the MST, the minimum spanning tree created from a list of nodes, and determine a route to connect all the nodes and the shortest route of the available options. The class is initiated by taking the spanning tree created by the MST class. Using the origin node and the last of connections, it initiates the MST class and creates a preorder array, a total variable and a presentation array. These are used in the functions within the class to determine the best route for the problem.
+
 \begin{itemize}
 \item getPreorder: Using the Node preorder function, to get all the neighboring nodes, adding them to the array.
 \item getTotal: Starting at the initial input node, getTotal goes through the list and finds the shortest route to travel to all the nodes. This will later be compared to all the totals to find the shortest path. This function is operational but is written in a manner that it returns a working total but does not find other options. This means that our results may not be the best option available. 
 \item getPresentation: This function takes the totals and adds them to the preorder array, listing all the data in one place.
 \item fileLines: This function strictly prints out all the results in a file. 
 \end{itemize}
+
 \section{The Tours}
+\indent The results are listed below comparing our results with the optimal solutions. There appears to be no correlation between the size of the spanning trees and the accuracy of our algorithm. Our Algorithm is correct and returns a legitimate route. However, there are areas that could be improved to find the optimal route. One area is discussed in TSP Class -> get Total. Given that the assignment was to find a route, and not to find the optimal route, our results will get the salmon to ever home - it will just take him a long time. 
+
 \subsection{Tour 1}
+\indent Our algorithm above came up with a total cost of 136,087. The optimal tour length is 108,159. Our algorithm takes 25\% longer than the optimal length. 
+
 \subsection{Tour 2}
+\indent The optimal cost of tour 2 is 2,579. Our results came up with a tour of 3,633 meaning our algorithm's route is 40\% slower than the optimal length. 
+
 \subsection{Tour 3}
+\indent Tour 3 has an optimal route of 1,573,084. Our algorithm route has a length of 4,105,325. Our route is 161\% longer than the optimal route. 
+
 \subsection{Competition Tours}
+
 \newpage
 \section{Appendix}
-\subsection{Appendix 1: Code}
+
+\subsection{Appendix 1: Algorithm Code}
 \lstinputlisting[breaklines = true]{main.py}
+\subsection{Appendix 2: Example Results}
+\subsubsection{Example 1}
+\input{ex1Results.txt}
+\subsubsection{Example 2}
+\input{ex2Results.txt}
+\subsubsection{Example 3}
+\input{ex3Results.txt}
+
 
 
 
